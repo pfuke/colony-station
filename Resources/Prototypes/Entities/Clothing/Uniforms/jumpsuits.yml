@@ -743,8 +743,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitLawyerBlue
-  name: blue lawyer suit
-  description: A flashy blue suit worn by lawyers and show-offs.
+  name: blue suit
+  description: A flashy blue suit worn by the post-apocalyptic elite.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/lawyerblue.rsi
@@ -820,8 +820,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitNanotrasen
-  name: nanotrasen jumpsuit
-  description: A stately blue jumpsuit to represent NanoTrasen.
+  name: guard jumpsuit
+  description: A stately blue jumpsuit to represent the warlord regime.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/nanotrasen.rsi
@@ -831,7 +831,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCapFormal
-  name: captain's formal suit
+  name: magnate's formal suit
   description: A suit for special occasions.
   components:
   - type: Sprite
@@ -842,7 +842,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomFormal
-  name: central command formal suit
+  name: imperial formal suit
   description: A suit for special occasions.
   components:
   - type: Sprite
@@ -853,7 +853,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitHosFormal
-  name: hos's formal suit
+  name: ruler's formal suit
   description: A suit for special occasions.
   components:
   - type: Sprite

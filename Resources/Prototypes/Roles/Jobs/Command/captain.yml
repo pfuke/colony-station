@@ -35,15 +35,14 @@
 - type: startingGear
   id: CaptainGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCaptain
+    jumpsuit: ClothingUniformJumpsuitHosFormal
     back: ClothingBackpackCaptainFilled
-    shoes: ClothingShoesColorBlack
-    head: ClothingHeadHatCaptain
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatFancyCrown
     eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCaptain
-    outerClothing: ClothingOuterArmorCaptainCarapace
+    gloves: ClothingHandsGlovesColorWhite
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
-  innerclothingskirt: ClothingUniformJumpskirtCaptain
+  innerclothingskirt: ClothingUniformJumpskirtHosFormal
   satchel: ClothingBackpackSatchelCaptainFilled
   duffelbag: ClothingBackpackDuffelCaptainFilled

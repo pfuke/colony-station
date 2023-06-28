@@ -542,7 +542,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCapFormalDress
-  name: captain's formal dress
+  name: magnate's formal dress
   description: A dress for special occasions.
   components:
   - type: Sprite
@@ -553,7 +553,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCentcomFormalDress
-  name: central command formal dress
+  name: imperial formal dress
   description: A dress for special occasions
   components:
   - type: Sprite
@@ -564,7 +564,7 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHosFormal
-  name: hos's formal dress
+  name: ruler's formal dress
   description: A dress for special occasions.
   components:
   - type: Sprite
@@ -645,8 +645,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtLawyerBlue
-  name: blue lawyer suitskirt
-  description: A flashy blue suitskirt worn by lawyers and show-offs.
+  name: blue suitskirt
+  description: A flashy blue suitskirt worn by the post-apocalyptic elite.
   components:
     - type: Sprite
       sprite: Clothing/Uniforms/Jumpskirt/lawyerblue.rsi

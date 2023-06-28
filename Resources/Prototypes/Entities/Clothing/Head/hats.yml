@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretWarden
-  name: warden's beret
-  description: A corporate blue beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
+  name: guard beret
+  description: A beret of the ancient biodome security team.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beret_warden.rsi

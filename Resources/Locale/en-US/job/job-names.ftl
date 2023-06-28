@@ -15,7 +15,7 @@ job-name-cmo = Chief Medicus
 job-name-chemist = Alchemist
 job-name-technical-assistant = Apprentice Mason
 job-name-engineer = Mason
-job-name-atmostech = Geomancer
+job-name-atmostech = Hydrologer
 job-name-hop = Prime Minister
 job-name-captain = Ruler
 job-name-serviceworker = Servant
@@ -45,7 +45,7 @@ job-name-boxer = Pugilist
 job-name-zookeeper = Beastmaster
 
 # Role timers - Make these alphabetical or I cut you
-JobAtmosphericTechnician = Geomancer
+JobAtmosphericTechnician = Hydrologer
 JobBartender = Barkeep
 JobBotanist = Peasant
 JobBoxer = Pugilist

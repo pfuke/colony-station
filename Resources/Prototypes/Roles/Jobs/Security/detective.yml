@@ -21,17 +21,17 @@
 - type: startingGear
   id: DetectiveGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitDetective
+    jumpsuit: ClothingUniformJumpsuitLawyerBlue
     back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
-    head: ClothingHeadHatFedoraBrown
     outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesCombat
     pocket1: ForensicPad
     pocket2: ForensicScanner
-    belt: ClothingBeltHolster
+    belt: ClothingBeltSecurityFilled
   innerclothingskirt: ClothingUniformJumpskirtDetective
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled

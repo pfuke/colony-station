@@ -3,13 +3,9 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hrs
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 28800 #8 hrs
-      inverted: true # stop playing intern if you're good at security!
+  # requirements:
+  #   - !type:OverallPlaytimeRequirement
+  #     time: 3600 #1 hr
   startingGear: SecurityCadetGear
   icon: "SecurityCadet"
   supervisors: job-supervisors-security
@@ -22,11 +18,15 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorRed
+    jumpsuit: ClothingUniformJumpsuitNanotrasen
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatBeretWarden
+    outerClothing: ClothingOuterArmorBulletproof
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
-  innerclothingskirt: ClothingUniformJumpskirtColorRed
+    mask: ClothingMaskGasSecurity
+    belt: ClothingBeltSecurityFilled
+  # innerclothingskirt: ClothingUniformJumpskirtColorBlue
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled
