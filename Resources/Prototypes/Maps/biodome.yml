@@ -22,7 +22,7 @@
             CargoTechnician: [ 3, 3 ]
             Passenger: [ -1, -1 ]
             Bartender: [ 2, 2 ]
-            Botanist: [ 3, 4]
+            Botanist: [ 10 , 12 ]
             Chef: [ 2, 2 ]
             Clown: [ 1, 1 ]
             Janitor: [ 2, 3 ]
