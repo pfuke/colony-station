@@ -25,11 +25,13 @@
 - type: startingGear
   id: ClownGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitClown
+    jumpsuit: ClothingUniformJumpsuitJester
     back: ClothingBackpackClownFilled
-    shoes: ClothingShoesClown
+    shoes: ClothingShoesJester
+    head: ClothingHeadHatJester
     mask: ClothingMaskClown
-    pocket1: BikeHorn
+    hands: ClothingHandsGlovesColorGreen
+    pocket1: CluwneHorn
     pocket2: ClownRecorder
     id: ClownPDA
     ears: ClothingHeadsetService

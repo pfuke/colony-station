@@ -63,7 +63,7 @@
   parent: MarkerBase
   components:
   - type: GhostRole
-    rules: You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
+    rules: You are an elite warrior tasked with the destruction of the castle. As an antagonist, do whatever is required to complete this task.
   - type: GhostRoleMobSpawner
     prototype: MobHumanNukeOp
   - type: NukeOperativeSpawner
@@ -83,8 +83,8 @@
   components:
   - type: GhostRole
     name: Lone Operative
-    description: You are a lone nuclear operative. Destroy the station!
-    rules: You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
+    description: You are a lone ninja assassin. Kill the nobles and destroy the castle!
+    rules: You are an elite warrior tasked with the destruction of the castle. As an antagonist, do whatever is required to complete this task.
   - type: GhostRoleMobSpawner
     prototype: MobHumanLoneNuclearOperative
   - type: Sprite
