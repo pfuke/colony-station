@@ -1,11 +1,11 @@
 ﻿job-supervisors-centcom = CentCom official
 job-supervisors-captain = the Ruler
 job-supervisors-hop = the Prime Minister
+job-supervisors-hop-qm = the Steward and Prime Minister
 job-supervisors-hos = the Marshal
 job-supervisors-ce = the Chief Architect
 job-supervisors-cmo = the Chief Medicus
 job-supervisors-rd = the Patriarch
-job-supervisors-qm = the Steward
 job-supervisors-service = the nobles and palace officials
 job-supervisors-engineering = masons and the Chief Architect
 job-supervisors-medicine = the Chief Medicus

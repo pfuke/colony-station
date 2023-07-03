@@ -28,9 +28,6 @@
         type: TransferAmountBoundUserInterface
       - key: enum.InstrumentUiKey.Key
         type: InstrumentBoundUserInterface
-    - type: Reactive
-      groups:
-        Acidic: [Touch]
     - type: Fixtures
       fixtures:
         fix1:

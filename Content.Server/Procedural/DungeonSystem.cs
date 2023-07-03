@@ -5,7 +5,6 @@ using Robust.Shared.CPUJob.JobQueues.Queues;
 using Content.Server.Decals;
 using Content.Server.GameTicking.Events;
 using Content.Shared.CCVar;
-using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Procedural;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -16,7 +15,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Procedural;
 
-public sealed partial class DungeonSystem : SharedDungeonSystem
+public sealed partial class DungeonSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;

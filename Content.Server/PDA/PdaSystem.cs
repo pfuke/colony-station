@@ -33,6 +33,8 @@ namespace Content.Server.PDA
             base.Initialize();
 
             SubscribeLocalEvent<PdaComponent, LightToggleEvent>(OnLightToggle);
+            SubscribeLocalEvent<PdaComponent, GridModifiedEvent>(OnGridChanged);
+            SubscribeLocalEvent<PdaComponent, AlertLevelChangedEvent>(OnAlertLevelChanged);
 
             // UI Events:
             SubscribeLocalEvent<PdaComponent, PdaRequestUpdateInterfaceMessage>(OnUiMessage);
@@ -41,9 +43,6 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, PdaShowMusicMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaShowUplinkMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaLockUplinkMessage>(OnUiMessage);
-
-            SubscribeLocalEvent<StationRenamedEvent>(OnStationRenamed);
-            SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
         }
 
         protected override void OnComponentInit(EntityUid uid, PdaComponent pda, ComponentInit args)
@@ -81,23 +80,10 @@ namespace Content.Server.PDA
             UpdatePdaUi(uid, pda);
         }
 
-        private void OnStationRenamed(StationRenamedEvent ev)
+        private void OnGridChanged(EntityUid uid, PdaComponent pda, GridModifiedEvent args)
         {
-            UpdateAllPdaUisOnStation();
-        }
-
-        private void OnAlertLevelChanged(AlertLevelChangedEvent args)
-        {
-            UpdateAllPdaUisOnStation();
-        }
-
-        private void UpdateAllPdaUisOnStation()
-        {
-            var query = EntityQueryEnumerator<PdaComponent>();
-            while (query.MoveNext(out var ent, out var comp))
-            {
-                UpdatePdaUi(ent, comp);
-            }
+            UpdateStationName(uid, pda);
+            UpdatePdaUi(uid, pda);
         }
 
         /// <summary>
@@ -105,7 +91,16 @@ namespace Content.Server.PDA
         /// </summary>
         public void UpdatePdaUi(EntityUid uid, PdaComponent pda)
         {
-            if (!_ui.TryGetUi(uid, PdaUiKey.Key, out _))
+            var ownerInfo = new PdaIdInfoText
+            {
+                ActualOwnerName = pda.OwnerName,
+                IdOwner = pda.ContainedId?.FullName,
+                JobTitle = pda.ContainedId?.JobTitle,
+                StationAlertLevel = pda.StationAlertLevel,
+                StationAlertColor = pda.StationAlertColor
+            };
+
+            if (!_ui.TryGetUi(uid, PdaUiKey.Key, out var ui))
                 return;
 
             var address = GetDeviceNetAddress(uid);
@@ -120,14 +115,7 @@ namespace Content.Server.PDA
             var state = new PdaUpdateState(
                 pda.FlashlightOn,
                 pda.PenSlot.HasItem,
-                new PdaIdInfoText
-                {
-                    ActualOwnerName = pda.OwnerName,
-                    IdOwner = pda.ContainedId?.FullName,
-                    JobTitle = pda.ContainedId?.JobTitle,
-                    StationAlertLevel = pda.StationAlertLevel,
-                    StationAlertColor = pda.StationAlertColor
-                },
+                ownerInfo,
                 pda.StationName,
                 showUplink,
                 hasInstrument,
@@ -202,6 +190,12 @@ namespace Content.Server.PDA
         {
             var station = _station.GetOwningStation(uid);
             pda.StationName = station is null ? null : Name(station.Value);
+        }
+
+        private void OnAlertLevelChanged(EntityUid uid, PdaComponent pda, AlertLevelChangedEvent args)
+        {
+            UpdateAlertLevel(uid, pda);
+            UpdatePdaUi(uid, pda);
         }
 
         private void UpdateAlertLevel(EntityUid uid, PdaComponent pda)

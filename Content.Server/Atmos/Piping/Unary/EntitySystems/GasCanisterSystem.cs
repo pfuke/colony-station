@@ -5,7 +5,6 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.NodeContainer;
-using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.Popups;
@@ -30,7 +29,6 @@ public sealed class GasCanisterSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
 
     public override void Initialize()
     {
@@ -38,7 +36,7 @@ public sealed class GasCanisterSystem : EntitySystem
 
         SubscribeLocalEvent<GasCanisterComponent, ComponentStartup>(OnCanisterStartup);
         SubscribeLocalEvent<GasCanisterComponent, AtmosDeviceUpdateEvent>(OnCanisterUpdated);
-        SubscribeLocalEvent<GasCanisterComponent, ActivateInWorldEvent>(OnCanisterActivate, after: new[] { typeof(LockSystem) });
+        SubscribeLocalEvent<GasCanisterComponent, ActivateInWorldEvent>(OnCanisterActivate);
         SubscribeLocalEvent<GasCanisterComponent, InteractHandEvent>(OnCanisterInteractHand);
         SubscribeLocalEvent<GasCanisterComponent, InteractUsingEvent>(OnCanisterInteractUsing);
         SubscribeLocalEvent<GasCanisterComponent, EntInsertedIntoContainerMessage>(OnCanisterContainerInserted);
@@ -94,7 +92,7 @@ public sealed class GasCanisterSystem : EntitySystem
         string? tankLabel = null;
         var tankPressure = 0f;
 
-        if (_nodeContainer.TryGetNode(nodeContainer, canister.PortName, out PipeNode? portNode) && portNode.NodeGroup?.Nodes.Count > 1)
+        if (nodeContainer.TryGetNode(canister.PortName, out PipeNode? portNode) && portNode.NodeGroup?.Nodes.Count > 1)
             portStatus = true;
 
         if (containerManager.TryGetContainer(canister.ContainerName, out var tankContainer)
@@ -167,7 +165,7 @@ public sealed class GasCanisterSystem : EntitySystem
             || !TryComp<AppearanceComponent>(uid, out var appearance))
             return;
 
-        if (!_nodeContainer.TryGetNode(nodeContainer, canister.PortName, out PortablePipeNode? portNode))
+        if (!nodeContainer.TryGetNode(canister.PortName, out PortablePipeNode? portNode))
             return;
 
         if (portNode.NodeGroup is PipeNet {NodeCount: > 1} net)
@@ -228,11 +226,6 @@ public sealed class GasCanisterSystem : EntitySystem
             return;
 
         if (CheckLocked(uid, component, args.User))
-            return;
-
-        // Needs to be here so the locked check still happens if the canister
-        // is locked and you don't have permissions
-        if (args.Handled)
             return;
 
         _ui.TryOpen(uid, GasCanisterUiKey.Key, actor.PlayerSession);

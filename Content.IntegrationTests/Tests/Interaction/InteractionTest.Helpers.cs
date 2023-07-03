@@ -10,7 +10,6 @@ using Content.Client.Chemistry.UI;
 using Content.Client.Construction;
 using Content.Server.Atmos;
 using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.Construction.Components;
 using Content.Server.Gravity;
 using Content.Server.Power.Components;
@@ -642,7 +641,7 @@ public abstract partial class InteractionTest
     /// <summary>
     /// Convenience method to get components on the target. Returns SERVER-SIDE components.
     /// </summary>
-    protected T Comp<T>(EntityUid? target = null) where T : IComponent
+    protected T Comp<T>(EntityUid? target = null)
     {
         target ??= Target;
         if (target == null)
@@ -928,16 +927,17 @@ public abstract partial class InteractionTest
         var target = uid ?? MapData.MapUid;
         await Server.WaitPost(() =>
         {
-            var atmosSystem = SEntMan.System<AtmosphereSystem>();
             var atmos = SEntMan.EnsureComponent<MapAtmosphereComponent>(target);
+            atmos.Space = false;
             var moles = new float[Atmospherics.AdjustedNumberOfGases];
             moles[(int) Gas.Oxygen] = 21.824779f;
             moles[(int) Gas.Nitrogen] = 82.10312f;
-            atmosSystem.SetMapAtmosphere(target, false, new GasMixture(2500)
+
+            atmos.Mixture = new GasMixture(2500)
             {
                 Temperature = 293.15f,
                 Moles = moles,
-            }, atmos);
+            };
         });
     }
 

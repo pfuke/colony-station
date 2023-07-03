@@ -47,7 +47,7 @@
         sound:
           path: /Audio/Effects/metalbreak.ogg
   - type: StaticPrice
-    price: 10
+    price: 50
 
 - type: entity
   name: chair
@@ -268,7 +268,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 8
+        Blunt: 15
   - type: Construction
     graph: Seat
     node: chairFolding

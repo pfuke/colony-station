@@ -30,10 +30,6 @@
     sprite: Clothing/Head/Bandanas/botany.rsi
   - type: Clothing
     sprite: Clothing/Head/Bandanas/botany.rsi
-  - type: Tag
-    tags:
-    - HamsterWearable
-    - WhitelistChameleon
 
 - type: entity
   parent: ClothingHeadBaseButcherable

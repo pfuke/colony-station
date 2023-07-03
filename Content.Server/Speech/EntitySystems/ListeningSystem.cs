@@ -33,12 +33,11 @@ public sealed class ListeningSystem : EntitySystem
         var attemptEv = new ListenAttemptEvent(source);
         var ev = new ListenEvent(message, source);
         var obfuscatedEv = obfuscatedMessage == null ? null : new ListenEvent(obfuscatedMessage, source);
-        var query = EntityQueryEnumerator<ActiveListenerComponent, TransformComponent>();
 
-        while(query.MoveNext(out var listenerUid, out var listener, out var xform))
+        foreach (var (listener, xform) in EntityQuery<ActiveListenerComponent, TransformComponent>())
         {
             if (xform.MapID != sourceXform.MapID)
-                continue;
+                return;
 
             // range checks
             // TODO proper speech occlusion
@@ -46,7 +45,7 @@ public sealed class ListeningSystem : EntitySystem
             if (distance > listener.Range * listener.Range)
                 continue;
 
-            RaiseLocalEvent(listenerUid, attemptEv);
+            RaiseLocalEvent(listener.Owner, attemptEv);
             if (attemptEv.Cancelled)
             {
                 attemptEv.Uncancel();
@@ -54,9 +53,9 @@ public sealed class ListeningSystem : EntitySystem
             }
 
             if (obfuscatedEv != null && distance > ChatSystem.WhisperRange)
-                RaiseLocalEvent(listenerUid, obfuscatedEv);
+                RaiseLocalEvent(listener.Owner, obfuscatedEv);
             else
-                RaiseLocalEvent(listenerUid, ev);
+                RaiseLocalEvent(listener.Owner, ev);
         }
     }
 }

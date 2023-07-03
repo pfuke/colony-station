@@ -21,11 +21,7 @@ public sealed class LocalityLoaderSystem : BaseWorldSystem
         while (e.MoveNext(out var uid, out var loadable, out var xform))
         {
             if (!controllerQuery.TryGetComponent(xform.MapUid, out var controller))
-            {
-                RaiseLocalEvent(uid, new LocalStructureLoadedEvent());
-                RemCompDeferred<LocalityLoaderComponent>(uid);
-                continue;
-            }
+                return;
 
             var coords = GetChunkCoords(uid, xform);
             var done = false;

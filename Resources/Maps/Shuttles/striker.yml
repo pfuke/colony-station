@@ -1928,7 +1928,7 @@ entities:
       type: Transform
     - canCollide: False
       type: Physics
-- proto: MedkitCombat
+- proto: MedkitCombatFilled
   entities:
   - uid: 172
     components:

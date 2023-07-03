@@ -6,11 +6,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreTin
-        Grasslands: OreTin
-        Lava: BasaltOreTin
-        Snow: SnowOreTin
+      proto: OreTin
 
 - type: salvageLoot
   id: OreQuartz
@@ -18,11 +14,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreQuartz
-        Grasslands: OreQuartz
-        Lava: BasaltOreQuartz
-        Snow: SnowOreQuartz
+      proto: OreQuartz
 
 # - Medium value
 - type: salvageLoot
@@ -31,11 +23,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreGold
-        Grasslands: OreGold
-        Lava: BasaltOreGold
-        Snow: SnowOreGold
+      proto: OreGold
 
 - type: salvageLoot
   id: OreSilver
@@ -43,11 +31,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreSilver
-        Grasslands: OreSilver
-        Lava: BasaltOreSilver
-        Snow: SnowOreSilver
+      proto: OreSilver
 
 # - High value
 - type: salvageLoot
@@ -56,11 +40,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OrePlasma
-        Grasslands: OrePlasma
-        Lava: BasaltOrePlasma
-        Snow: SnowOrePlasma
+      proto: OrePlasma
 
 - type: salvageLoot
   id: OreUranium
@@ -68,11 +48,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreUranium
-        Grasslands: OreUranium
-        Lava: BasaltOreUranium
-        Snow: SnowOreUranium
+      proto: OreUranium
 
 - type: salvageLoot
   id: OreBananium
@@ -80,11 +56,7 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreBananium
-        Grasslands: OreBananium
-        Lava: BasaltOreBananium
-        Snow: SnowOreBananium
+      proto: OreBananium
 
 - type: salvageLoot
   id: OreArtifactFragment
@@ -92,8 +64,4 @@
   guaranteed: true
   loots:
     - !type:BiomeMarkerLoot
-      proto:
-        Caves: OreArtifactFragment
-        Grasslands: OreArtifactFragment
-        Lava: BasaltOreArtifactFragment
-        Snow: SnowOreArtifactFragment
+      proto: OreArtifactFragment

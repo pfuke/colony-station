@@ -530,7 +530,6 @@
     state: pumpPressure
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   name: volumetric gas pump
@@ -552,7 +551,6 @@
     state: pumpVolume
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasPassiveGate
@@ -574,7 +572,6 @@
     state: pumpPassiveGate
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasValve
@@ -596,7 +593,6 @@
     state: pumpManualValve
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: SignalControlledValve
@@ -618,7 +614,6 @@
     state: pumpSignalValve
   conditions:
   - !type:TileNotBlocked {}
-  - !type:NoUnstackableInTile
 
 - type: construction
   id: GasPort
@@ -640,7 +635,6 @@
     state: gasCanisterPort
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasDualPortVentPump
@@ -680,7 +674,6 @@
   mirror: GasFilterFlipped
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasFilterFlipped
@@ -699,7 +692,6 @@
   mirror: GasFilter
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasMixer
@@ -717,7 +709,6 @@
   mirror: GasMixerFlipped
   conditions:
     - !type:TileNotBlocked {}
-    - !type:NoUnstackableInTile
 
 - type: construction
   id: GasMixerFlipped
@@ -735,8 +726,7 @@
     state: gasMixerF
   mirror: GasMixer
   conditions:
-    - !type:TileNotBlocked
-    - !type:NoUnstackableInTile
+    - !type:TileNotBlocked {}
 
 - type: construction
   id: PressureControlledValve
@@ -752,8 +742,7 @@
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     state: off
   conditions:
-    - !type:TileNotBlocked
-    - !type:NoUnstackableInTile
+    - !type:TileNotBlocked {}
 
 # INTERCOM
 - type: construction

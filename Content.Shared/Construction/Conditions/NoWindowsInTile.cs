@@ -2,7 +2,6 @@
 using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 
 namespace Content.Shared.Construction.Conditions
 {
@@ -12,20 +11,11 @@ namespace Content.Shared.Construction.Conditions
     {
         public bool Condition(EntityUid user, EntityCoordinates location, Direction direction)
         {
-            var entManager = IoCManager.Resolve<IEntityManager>();
-            var gridUid = location.GetGridUid(entManager);
+            var tagSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<TagSystem>();
 
-            if (!entManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
-                return true;
-
-            var tagQuery = entManager.GetEntityQuery<TagComponent>();
-            var sysMan = entManager.EntitySysManager;
-            var tagSystem = sysMan.GetEntitySystem<TagSystem>();
-            var lookup = sysMan.GetEntitySystem<EntityLookupSystem>();
-
-            foreach (var entity in lookup.GetEntitiesIntersecting(gridUid.Value, grid.LocalToTile(location)))
+            foreach (var entity in location.GetEntitiesInTile(LookupFlags.Approximate | LookupFlags.Static))
             {
-                if (tagSystem.HasTag(entity, "Window", tagQuery))
+                if (tagSystem.HasTag(entity, "Window"))
                     return false;
             }
 

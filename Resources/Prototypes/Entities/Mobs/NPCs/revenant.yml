@@ -38,6 +38,7 @@
   - type: MovementIgnoreGravity
   - type: Damageable
     damageContainer: Biological
+  - type: Appearance
   - type: Examiner
   - type: NoSlip
   - type: Actions

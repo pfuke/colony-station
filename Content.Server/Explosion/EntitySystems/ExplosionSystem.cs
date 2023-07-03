@@ -153,7 +153,7 @@ public sealed partial class ExplosionSystem : EntitySystem
             explosive.CanCreateVacuum,
             user);
 
-        if (explosive.DeleteAfterExplosion ?? delete)
+        if (delete)
             EntityManager.QueueDeleteEntity(uid);
     }
 

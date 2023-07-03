@@ -72,7 +72,7 @@
     containers:
       DisposalUnit: !type:Container
   - type: StaticPrice
-    price: 62
+    price: 100
   - type: PowerSwitch
 
 - type: entity

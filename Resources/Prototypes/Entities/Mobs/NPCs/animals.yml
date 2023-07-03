@@ -100,6 +100,7 @@
       10: Dead
   - type: Stamina
     excess: 10
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -169,6 +170,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -225,6 +227,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -331,6 +334,7 @@
     available:
       - enum.DamageStateVisualLayers.Base:
           butterfly: Rainbow
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -371,6 +375,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -442,6 +447,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -484,6 +490,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -538,6 +545,7 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: goose
       sprite: Mobs/Animals/goose.rsi
+  - type: Appearance
   - type: Fixtures
     fixtures:
       fix1:
@@ -598,6 +606,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -641,6 +650,7 @@
         layer:
         - MobLayer
   - type: Physics
+  - type: Appearance
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
@@ -771,6 +781,7 @@
   - type: Body
     prototype: Primate
     requiredLegs: 1 # TODO: More than 1 leg
+  - type: Appearance
   - type: CreamPied
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -867,6 +878,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 5
     baseSprintSpeed : 5
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1004,6 +1016,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1058,6 +1071,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1104,6 +1118,7 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1155,6 +1170,7 @@
         - FlyingMobMask
         layer:
         - FlyingMobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1201,6 +1217,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1257,6 +1274,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1374,6 +1392,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1450,6 +1469,11 @@
       spawned:
         - id: MaterialBananium1
           amount: 1
+    - type: GhostRole
+      makeSentient: true
+      name: ghost-role-information-giant-spider-name
+      description: ghost-role-information-giant-spider-description
+    - type: GhostTakeoverAvailable
     - type: DamageStateVisuals
       states:
         Alive:
@@ -1504,6 +1528,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: possum
     templateId: pet
@@ -1559,6 +1584,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: possum #close enough
     templateId: pet
@@ -1614,6 +1640,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: fox
     templateId: pet
@@ -1688,6 +1715,7 @@
         Base: corgi_dead
       Dead:
         Base: corgi_dead
+  - type: Appearance
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1720,6 +1748,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: narsian
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1781,6 +1810,7 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: puppy
+  - type: Appearance
   - type: Inventory
     speciesId: puppy
     templateId: pet
@@ -1821,6 +1851,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: cat
     templateId: pet
@@ -1947,6 +1978,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: sloth
     templateId: pet
@@ -2002,6 +2034,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: fox #close enough
     templateId: pet
@@ -2078,9 +2111,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 4
     baseSprintSpeed : 4
+  - type: Appearance
   - type: Inventory
     speciesId: hamster
-    templateId: hamster
+    templateId: pet
   - type: InventorySlots
   - type: Strippable
   - type: UserInterface
@@ -2178,6 +2212,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Appearance
   - type: Inventory
     speciesId: pig
     templateId: pet

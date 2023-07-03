@@ -33,7 +33,7 @@
 
 - type: cargoBounty
   id: BountyBrain
-  reward: 2500
+  reward: 2000
   description: bounty-description-brain
   entries:
   - name: bounty-item-brain
@@ -55,7 +55,7 @@
 
 - type: cargoBounty
   id: BountyBriefcase
-  reward: 1500
+  reward: 1000
   description: bounty-description-briefcase
   entries:
   - name: bounty-item-briefcase
@@ -88,7 +88,7 @@
 
 - type: cargoBounty
   id: BountyCarp
-  reward: 2500
+  reward: 2000
   description: bounty-description-carp
   entries:
   - name: bounty-item-carp
@@ -181,11 +181,11 @@
 
 - type: cargoBounty
   id: BountyFleshMonster
-  reward: 3000
+  reward: 2500
   description: bounty-description-flesh-monster
   entries:
   - name: bounty-item-flesh-monster
-    amount: 3
+    amount: 8
     whitelist:
       tags:
       - Flesh
@@ -269,7 +269,7 @@
 
 - type: cargoBounty
   id: BountyLung
-  reward: 3500
+  reward: 3000
   description: bounty-description-lung
   entries:
   - name: bounty-item-lung
@@ -328,9 +328,9 @@
   description: bounty-description-percussion
   entries:
   - name: bounty-item-percussion
-    amount: 3
+    amount: 7
     whitelist:
-      tags:
+      components:
       - PercussionInstrument
 
 - type: cargoBounty
@@ -341,8 +341,8 @@
   - name: bounty-item-pie
     amount: 1
     whitelist:
-      tags:
-      - Pie
+      components:
+        - Pie
 
 - type: cargoBounty
   id: BountyPrisonUniform
@@ -382,7 +382,7 @@
 
 - type: cargoBounty
   id: BountyShiv
-  reward: 800
+  reward: 600
   description: bounty-description-shiv
   entries:
   - name: bounty-item-shiv
@@ -437,11 +437,11 @@
 
 - type: cargoBounty
   id: BountyTechDisk
-  reward: 2500
+  reward: 2000
   description: bounty-description-tech-disk
   entries:
   - name: bounty-item-tech-disk
-    amount: 5
+    amount: 10
     whitelist:
       components:
       - TechnologyDisk
