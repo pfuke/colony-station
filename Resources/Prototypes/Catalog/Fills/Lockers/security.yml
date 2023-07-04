@@ -6,8 +6,6 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-      - id: WeaponDisabler
-        prob: 0.3
       - id: ClothingHeadHatWarden
       - id: ClothingHeadHatBeretWarden
       - id: ClothingBeltSecurityFilled
@@ -30,13 +28,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: FlashlightSeclite
-      - id: WeaponDisabler
-        prob: 0.3
       - id: ClothingHeadHatWarden
       - id: ClothingHeadHatBeretWarden
       - id: ClothingBeltSecurityFilled
-      - id: Flash
       - id: ClothingEyesGlassesSecurity
       - id: ClothingHeadsetAltSecurity
       - id: ClothingHandsGlovesCombat
@@ -45,7 +39,6 @@
       - id: ClothingOuterWinterWarden
       - id: RubberStampWarden
       - id: DoorRemoteArmory
-      - id: HoloprojectorSecurity
 
 - type: entity
   id: LockerSecurityFilled
@@ -54,16 +47,11 @@
   components:
   - type: StorageFill
     contents:
-      - id: FlashlightSeclite
-        prob: 0.8
-      - id: ClothingUniformJumpsuitSecGrey
-        prob: 0.3
+      - id: ClothingUniformJumpsuitNanotrasen
       - id: ClothingHeadHelmetHelmet
       - id: ClothingOuterArmorBulletproof
       - id: ClothingBeltSecurityFilled
-      - id: Flash
-        prob: 0.5
-      - id: ClothingEyesGlassesSecurity
+      - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetSecurity
       - id: ClothingHandsGlovesColorBlack
       - id: ClothingShoesBootsJack
@@ -113,13 +101,12 @@
       - id: ClothingNeckTieDet
       - id: ClothingOuterVestDetective
       - id: ClothingOuterCoatDetective
-      - id: FlashlightSeclite
       - id: ForensicScanner
       - id: BoxForensicPad
-      - id: WeaponRevolverInspector
       - id: DrinkDetFlask
-      - id: SpeedLoaderMagnum
       - id: ForensicGloves
+      - id: Musket
+      - id: MagazineBoxAntiMateriel
 
 - type: entity
   id: ClosetBombFilled

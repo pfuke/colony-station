@@ -17,6 +17,7 @@
   - Maintenance
   - Service
   - Detective
+  - Command
 
 - type: startingGear
   id: DetectiveGear

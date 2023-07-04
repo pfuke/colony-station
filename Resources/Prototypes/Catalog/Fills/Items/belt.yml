@@ -46,8 +46,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponDisabler
-      - id: Stunbaton
       - id: Handcuffs
       - id: Handcuffs
       - id: Handcuffs

@@ -84,20 +84,20 @@
 - type: startingGear
   id: SyndicateOperativeGearFull
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
+    jumpsuit: ClothingUniformJumpsuitColorBlack
     back: ClothingBackpackDuffelSyndicateOperative
+    head: ClothingHeadHelmetSpaceNinja
     mask: ClothingMaskGasSyndicate
   # eyes: Night Vision Goggles whenever they're made
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetAltSyndicate
-    gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitSyndie
-    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesSpaceNinja
+    outerClothing: ClothingOuterSuitSpaceninja
+    shoes: ClothingShoesSpaceNinja
     id: AgentIDCard
     pocket1: ExtendedEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
-  innerclothingskirt: ClothingUniformJumpskirtOperative
+  innerclothingskirt: ClothingUniformJumpskirtColorBlack
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
 

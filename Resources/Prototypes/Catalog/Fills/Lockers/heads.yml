@@ -7,20 +7,10 @@
     contents:
       - id: ClothingNeckCloakQm
       - id: ClothingHeadsetCargo
-      - id: PlushieLizard
-        prob: 0.1
       - id: ClothingHandsGlovesColorBrown
       - id: ClothingOuterSuitFire
-        prob: 0.5
       - id: ClothingShoesColorBrown
-        prob: 0.7
       - id: ClothingHeadHatQMsoft
-        prob: 0.8
-      - id: CargoRequestComputerCircuitboard
-      - id: CargoShuttleComputerCircuitboard
-      - id: CargoShuttleConsoleCircuitboard
-      - id: SalvageShuttleConsoleCircuitboard
-      - id: CargoBountyComputerCircuitboard
       - id: CigPackGreen
         prob: 0.50
       - id: DoorRemoteCargo
@@ -63,7 +53,6 @@
       - id: NukeDisk
       - id: PinpointerNuclear
       - id: CaptainIDCard
-      - id: WeaponDisabler
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
       - id: SpaceCash1000
@@ -93,21 +82,13 @@
       - id: BoxID
       - id: BoxHeadset
       - id: IDComputerCircuitboard
-      - id: WeaponDisabler
       - id: ClothingShoesColorBlack
-        prob: 0.7
-      - id: PlushieLizard
-        prob: 0.1
       - id: CigarGoldCase
-        prob: 0.10
-        # Fuck the HoP they don't deserve fucking cigars.
       - id: DoorRemoteService
       - id: ClothingNeckGoldmedal
       - id: RubberStampHop
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
-      - id: ClothingBackpackIan
-        prob: 0.5
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -147,7 +128,6 @@
       - id: ClothingHeadHatBeretEngineering
       - id: ClothingHandsGlovesColorYellow
       - id: CigarCase
-        prob: 0.15
       - id: DoorRemoteEngineering
       - id: RubberStampCE
       - id: ClothingHeadsetAltEngineering
@@ -200,7 +180,6 @@
       - id: ClothingHeadHatBeretCmo
       - id: DiagnoserMachineCircuitboard
       - id: VaccinatorMachineCircuitboard
-        prob: 0.25
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
@@ -245,9 +224,6 @@
       - id: CircuitImprinterMachineCircuitboard
       - id: ClothingNeckCloakRd
       - id: ClothingHeadsetMedicalScience
-      - id: HandTeleporter
-      - id: PlushieSlime
-        prob: 0.1
       - id: DoorRemoteResearch
       - id: ClothingHeadHatBeretRND
       - id: RubberStampRd
@@ -262,7 +238,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos
@@ -279,8 +254,6 @@
         prob: 0.1
       - id: ClothingOuterHardsuitSecurityRed
       - id: ClothingMaskGasSwat
-      - id: ClothingShoeSlippersDuck
-        prob: 0.2
       - id: DrinkVacuumFlask
         prob: 0.8
       - id: ClothingBeltSecurityFilled
@@ -307,7 +280,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos
@@ -315,29 +287,14 @@
       - id: ClothingUniformJumpskirtHoSAlt
       - id: ClothingUniformJumpsuitHoSAlt
       - id: ClothingUniformJumpsuitHoSBlue
-        prob: 0.5
       - id: ClothingUniformJumpsuitHoSGrey
-        prob: 0.5
-      - id: ClothingUniformJumpsuitHoSParadeMale
-        prob: 0.1
-      - id: ClothingUniformJumpskirtHoSParadeMale
-        prob: 0.1
-      - id: ClothingShoeSlippersDuck
-        prob: 0.2
       - id: DrinkVacuumFlask
-        prob: 0.8
       - id: ClothingBeltSecurityFilled
       - id: ClothingHeadsetAltSecurity
       - id: ClothingEyesGlassesSecurity
       - id: ClothingShoesBootsJack
       - id: CigarGoldCase
-        prob: 0.50
-      - id: PlushieSharkPink
-        prob: 0.1
       - id: DoorRemoteSecurity
-      - id: ClothingUniformJumpskirtHosFormal
-      - id: ClothingUniformJumpsuitHosFormal
       - id: RubberStampHos
       - id: SecurityTechFabCircuitboard
       - id: BoxEncryptionKeySecurity
-      - id: HoloprojectorSecurity
