@@ -255,8 +255,15 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvivalSyndicate
-      - id: WeaponPistolViper
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: Gauze
+        amount: 10
+      - id: Katana
+      - id: Musket
+      - id: MagazineBoxAntiMateriel
       - id: PinpointerNuclear
 
 
