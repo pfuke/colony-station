@@ -5655,8 +5655,7 @@ entities:
           -9,0:
             0: 65199
           -9,1:
-            0: 64254
-            4: 1024
+            0: 65278
           -9,2:
             0: 65530
           -9,3:
@@ -6753,7 +6752,7 @@ entities:
             0: 65535
           4,-17:
             0: 34959
-            5: 30576
+            4: 30576
           5,-20:
             0: 62540
           5,-19:
@@ -6958,7 +6957,7 @@ entities:
             0: 65535
           3,-17:
             0: 34959
-            6: 30576
+            5: 30576
           0,-24:
             0: 63624
           0,-23:
@@ -7491,21 +7490,6 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 24.678276
-          - 92.837326
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
           - 6666.982
           - 0
           - 0
@@ -7548,10 +7532,12 @@ entities:
     - type: OccluderTree
     - type: Shuttle
     - type: RadiationGridResistance
-    - shakeTimes: 10
+    - nextShake: 0
+      shakeTimes: 10
       type: GravityShake
     - type: GasTileOverlay
-    - type: SpreaderGrid
+    - nextUpdate: 0
+      type: SpreaderGrid
     - type: GridPathfinding
   - uid: 11906
     components:
@@ -7599,7 +7585,8 @@ entities:
     - type: OccluderTree
     - type: Shuttle
     - type: RadiationGridResistance
-    - type: SpreaderGrid
+    - nextUpdate: 0
+      type: SpreaderGrid
     - type: GridPathfinding
 - proto: AcousticGuitarInstrument
   entities:
@@ -10516,7 +10503,7 @@ entities:
     - dockJointId: docking46345
       dockedWith: 21828
       type: Docking
-    - SecondsUntilStateChange: -33170.543
+    - SecondsUntilStateChange: -32520.906
       changeAirtight: False
       state: Opening
       type: Door
@@ -10564,7 +10551,7 @@ entities:
     - dockJointId: docking46345
       dockedWith: 562
       type: Docking
-    - SecondsUntilStateChange: -33170.543
+    - SecondsUntilStateChange: -32520.906
       changeAirtight: False
       state: Opening
       type: Door
@@ -12376,7 +12363,7 @@ entities:
     - pos: 69.5,-3.5
       parent: 8364
       type: Transform
-- proto: AmeController
+- proto: AMEController
   entities:
   - uid: 18760
     components:
@@ -14154,6 +14141,8 @@ entities:
     - pos: 31.489525,-32.317123
       parent: 8364
       type: Transform
+    - nextAttack: 750.9046614
+      type: MeleeWeapon
   - uid: 21180
     components:
     - pos: 74.27338,-18.287746
@@ -14559,6 +14548,8 @@ entities:
       type: MetaData
     - parent: 20886
       type: Transform
+    - nextAttack: 3063.5165265
+      type: MeleeWeapon
     - canCollide: False
       type: Physics
     - type: InsideEntityStorage
@@ -76384,17 +76375,6 @@ entities:
     - pos: 58.27977,8.379128
       parent: 8364
       type: Transform
-- proto: ClothingOuterHardsuitBasic
-  entities:
-  - uid: 26585
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 20886
-      type: Transform
-    - canCollide: False
-      type: Physics
-    - type: InsideEntityStorage
 - proto: ClothingOuterHardsuitEVA
   entities:
   - uid: 5317
@@ -77114,6 +77094,8 @@ entities:
       pos: -28.5,-23.5
       parent: 8364
       type: Transform
+    - nextPrintTime: 31.5168737
+      type: CargoBountyConsole
 - proto: ComputerCargoOrders
   entities:
   - uid: 2899
@@ -79217,17 +79199,6 @@ entities:
     - pos: -33.5,-6.5
       parent: 8364
       type: Transform
-- proto: CrayonRainbow
-  entities:
-  - uid: 26054
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 20886
-      type: Transform
-    - canCollide: False
-      type: Physics
-    - type: InsideEntityStorage
 - proto: Crematorium
   entities:
   - uid: 10576
@@ -129416,6 +129387,8 @@ entities:
     - pos: -10.088213,9.755057
       parent: 8364
       type: Transform
+    - nextAttack: 1188.9447201
+      type: MeleeWeapon
   - uid: 26848
     components:
     - pos: -12.493954,3.065948
@@ -131294,8 +131267,8 @@ entities:
         immutable: False
         temperature: 293.1496
         moles:
-        - 2.145937
-        - 8.072811
+        - 4.999335
+        - 18.80702
         - 0
         - 0
         - 0
@@ -131312,12 +131285,9 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 26054
-          - 25839
-          - 26062
-          - 26585
-          - 20932
           - 21277
+          - 25839
+          - 20932
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -133503,6 +133473,8 @@ entities:
     - pos: 54.482033,-24.522997
       parent: 8364
       type: Transform
+    - nextAttack: 4442.2490056
+      type: MeleeWeapon
   - uid: 25977
     components:
     - pos: 24.446787,-32.484436
@@ -133701,13 +133673,6 @@ entities:
   - uid: 19882
     components:
     - pos: 8.5,-10.5
-      parent: 8364
-      type: Transform
-- proto: PaintingSadClown
-  entities:
-  - uid: 26595
-    components:
-    - pos: 20.5,1.5
       parent: 8364
       type: Transform
 - proto: PaintingTheGreatWave
@@ -135052,30 +135017,11 @@ entities:
     - pos: 58.5,-34.5
       parent: 8364
       type: Transform
-- proto: PosterLegitAnatomyPoster
-  entities:
-  - uid: 26592
-    components:
-    - pos: 28.5,-27.5
-      parent: 8364
-      type: Transform
-  - uid: 26593
-    components:
-    - pos: 37.5,-47.5
-      parent: 8364
-      type: Transform
 - proto: PosterLegitBuild
   entities:
   - uid: 17020
     components:
     - pos: 2.5,-50.5
-      parent: 8364
-      type: Transform
-- proto: PosterLegitCarpMount
-  entities:
-  - uid: 26594
-    components:
-    - pos: -27.5,-28.5
       parent: 8364
       type: Transform
 - proto: PosterLegitCleanliness
@@ -135116,13 +135062,6 @@ entities:
   - uid: 5776
     components:
     - pos: -10.5,-28.5
-      parent: 8364
-      type: Transform
-- proto: PosterLegitMime
-  entities:
-  - uid: 26596
-    components:
-    - pos: 23.5,6.5
       parent: 8364
       type: Transform
 - proto: PosterLegitNanotrasenLogo
@@ -147293,6 +147232,8 @@ entities:
     - pos: 39.535873,-18.379318
       parent: 8364
       type: Transform
+    - nextAttack: 4724.4472423
+      type: MeleeWeapon
   - uid: 21416
     components:
     - pos: 79.5,-47.5
@@ -151803,17 +151744,6 @@ entities:
     - pos: -57.5,-61.5
       parent: 8364
       type: Transform
-- proto: SpaceCash1000
-  entities:
-  - uid: 26062
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 20886
-      type: Transform
-    - canCollide: False
-      type: Physics
-    - type: InsideEntityStorage
 - proto: SpaceVillainArcadeComputerCircuitboard
   entities:
   - uid: 16326
@@ -158322,6 +158252,8 @@ entities:
     - pos: 22.5,-21.5
       parent: 8364
       type: Transform
+    - nextEmpEject: 791.7830475
+      type: VendingMachine
 - proto: VendingMachineCigs
   entities:
   - uid: 940
@@ -158697,6 +158629,8 @@ entities:
     - pos: 56.5,-24.5
       parent: 8364
       type: Transform
+    - nextEmpEject: 699.7160408
+      type: VendingMachine
 - proto: VendingMachineSalvage
   entities:
   - uid: 21793

@@ -31,6 +31,8 @@
     states:
       Alive:
         Base: bat
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -94,6 +96,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
+      5: Critical
       10: Dead
   - type: Stamina
     excess: 10
@@ -102,6 +105,8 @@
     states:
       Alive:
         Base: 0
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Tag
@@ -170,6 +175,8 @@
     states:
       Alive:
         Base: chicken-0
+      Critical:
+        Base: dead-0
       Dead:
         Base: dead-0
   - type: Butcherable
@@ -225,6 +232,8 @@
     states:
       Alive:
         Base: duck-0
+      Critical:
+        Base: dead-0
       Dead:
         Base: dead-0
   - type: Butcherable
@@ -264,6 +273,8 @@
     states:
       Alive:
         Base: duck-1
+      Critical:
+        Base: dead-1
       Dead:
         Base: dead-1
 
@@ -281,6 +292,8 @@
     states:
       Alive:
         Base: duck-2
+      Critical:
+        Base: dead-2
       Dead:
         Base: dead-2
 
@@ -315,6 +328,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
+      5: Critical
       10: Dead
   - type: RandomSprite
     available:
@@ -325,6 +339,8 @@
     states:
       Alive:
         Base: butterfly
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Bloodstream
@@ -364,6 +380,8 @@
     states:
       Alive:
         Base: cow
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: SolutionContainerManager
@@ -434,6 +452,8 @@
     states:
       Alive:
         Base: crab
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -475,6 +495,8 @@
     states:
       Alive:
         Base: goat
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: SolutionContainerManager
@@ -539,6 +561,8 @@
     states:
       Alive:
         Base: goose
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -587,6 +611,8 @@
     states:
       Alive:
         Base: crawling
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -995,6 +1021,8 @@
     states:
       Alive:
         Base: lizard
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1048,6 +1076,8 @@
     states:
       Alive:
         Base: slug
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1093,6 +1123,8 @@
     states:
       Alive:
         Base: frog
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1143,6 +1175,8 @@
     states:
       Alive:
         Base: parrot
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1188,6 +1222,8 @@
     states:
       Alive:
         Base: penguin
+      Critical:
+        Base: penguin_dead
       Dead:
         Base: penguin_dead
   - type: Butcherable
@@ -1243,6 +1279,8 @@
     states:
       Alive:
         Base: penguin
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1308,6 +1346,8 @@
     states:
       Alive:
         Base: snake
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable
@@ -1357,6 +1397,8 @@
     states:
       Alive:
         Base: tarantula
+      Critical:
+        Base: tarantula_dead
       Dead:
         Base: tarantula_dead
   - type: Butcherable
@@ -1367,6 +1409,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
+      90: Critical
       150: Dead
   - type: MeleeWeapon
     hidden: true
@@ -1499,6 +1542,8 @@
     states:
       Alive:
         Base: possum
+      Critical:
+        Base: possum_dead
       Dead:
         Base: possum_dead
   - type: Butcherable
@@ -1553,6 +1598,8 @@
     states:
       Alive:
         Base: raccoon
+      Critical:
+        Base: raccoon_dead
       Dead:
         Base: raccoon_dead
   - type: Butcherable
@@ -1607,6 +1654,8 @@
     states:
       Alive:
         Base: fox
+      Critical:
+        Base: fox_dead
       Dead:
         Base: fox_dead
   - type: Butcherable
@@ -1662,6 +1711,8 @@
     states:
       Alive:
         Base: corgi
+      Critical:
+        Base: corgi_dead
       Dead:
         Base: corgi_dead
   - type: Appearance
@@ -1702,6 +1753,8 @@
     states:
       Alive:
         Base: narsian
+      Critical:
+        Base: narsian_dead
       Dead:
         Base: narsian_dead
   - type: MeleeWeapon
@@ -1766,6 +1819,8 @@
     states:
       Alive:
         Base: puppy
+      Critical:
+        Base: puppy_dead
       Dead:
         Base: puppy_dead
   - type: Grammar
@@ -1810,6 +1865,8 @@
     states:
       Alive:
         Base: cat
+      Critical:
+        Base: cat_dead
       Dead:
         Base: cat_dead
   - type: Butcherable
@@ -1844,6 +1901,8 @@
     states:
       Alive:
         Base: cat2
+      Critical:
+        Base: cat2_dead
       Dead:
         Base: cat2_dead
 
@@ -1861,6 +1920,8 @@
     states:
       Alive:
         Base: spacecat
+      Critical:
+        Base: spacecat_dead
       Dead:
         Base: spacecat_dead
   - type: InteractionPopup
@@ -1885,6 +1946,8 @@
     states:
       Alive:
         Base: caracal_flop
+      Critical:
+        Base: caracal_dead
       Dead:
         Base: caracal_dead
 
@@ -1929,6 +1992,8 @@
     states:
       Alive:
         Base: sloth
+      Critical:
+        Base: sloth_dead
       Dead:
         Base: sloth_dead
   - type: Butcherable
@@ -1983,6 +2048,8 @@
     states:
       Alive:
         Base: ferret
+      Critical:
+        Base: ferret_dead
       Dead:
         Base: ferret_dead
   - type: Butcherable
@@ -2159,6 +2226,8 @@
     states:
       Alive:
         Base: pig
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: Butcherable

@@ -1,9 +1,11 @@
 ﻿#nullable enable
 using System.Linq;
+using System.Threading.Tasks;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Mind;
 using Content.Server.Players;
+using NUnit.Framework;
 using Robust.Shared.Console;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -29,7 +31,7 @@ public sealed class GhostRoleTests
     [Test]
     public async Task TakeRoleAndReturn()
     {
-        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings { ExtraPrototypes = Prototypes });
+        await using var pairTracker = await PoolManager.GetServerClient(new PoolSettings {ExtraPrototypes = Prototypes});
         var server = pairTracker.Pair.Server;
         var client = pairTracker.Pair.Client;
 

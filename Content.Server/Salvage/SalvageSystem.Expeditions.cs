@@ -282,14 +282,16 @@ public sealed partial class SalvageSystem
     {
         // send it to cargo, no rewards otherwise.
         if (!TryComp<StationCargoOrderDatabaseComponent>(comp.Station, out var cargoDb))
+        {
             return;
+        }
 
         foreach (var reward in comp.Rewards)
         {
             var sender = Loc.GetString("cargo-gift-default-sender");
             var desc = Loc.GetString("salvage-expedition-reward-description");
             var dest = Loc.GetString("cargo-gift-default-dest");
-            _cargo.AddAndApproveOrder(comp.Station, reward, 0, 1, sender, desc, dest, cargoDb);
+            _cargo.AddAndApproveOrder(cargoDb, reward, 0, 1, sender, desc, dest);
         }
     }
 }

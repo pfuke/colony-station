@@ -135,7 +135,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         RefreshShuttleConsoles();
     }
 
-    public void RefreshShuttleConsoles(EntityUid _)
+    public void RefreshShuttleConsoles(EntityUid uid)
     {
         // TODO: Should really call this per shuttle in some instances.
         RefreshShuttleConsoles();
@@ -149,7 +149,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         var docks = GetAllDocks();
         var query = AllEntityQuery<ShuttleConsoleComponent>();
 
-        while (query.MoveNext(out var uid, out var _))
+        while (query.MoveNext(out var uid, out var comp))
         {
             UpdateState(uid, docks);
         }
@@ -160,7 +160,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     /// </summary>
     private void OnConsoleUIClose(EntityUid uid, ShuttleConsoleComponent component, BoundUIClosedEvent args)
     {
-        if ((ShuttleConsoleUiKey) args.UiKey != ShuttleConsoleUiKey.Key ||
+        if ((ShuttleConsoleUiKey)args.UiKey != ShuttleConsoleUiKey.Key ||
             args.Session.AttachedEntity is not { } user)
         {
             return;
@@ -211,18 +211,19 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         {
             RemovePilot(user, pilotComponent);
 
-            // This feels backwards; is this intended to be a toggle? 
-            if (console == uid)
+            if (console == component)
+            {
                 return false;
+            }
         }
 
-        AddPilot(uid, user, component);
+        AddPilot(user, component);
         return true;
     }
 
     private void OnGetState(EntityUid uid, PilotComponent component, ref ComponentGetState args)
     {
-        args.State = new PilotComponentState(component.Console);
+        args.State = new PilotComponentState(component.Console?.Owner);
     }
 
     /// <summary>
@@ -327,16 +328,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         docks ??= GetAllDocks();
 
-        if (_ui.TryGetUi(consoleUid, ShuttleConsoleUiKey.Key, out var bui))
-            UserInterfaceSystem.SetUiState(bui, new ShuttleConsoleBoundInterfaceState(
+        _ui.GetUiOrNull(consoleUid, ShuttleConsoleUiKey.Key)
+            ?.SetState(new ShuttleConsoleBoundInterfaceState(
                 ftlState,
                 ftlTime,
                 destinations,
                 range,
                 consoleXform?.Coordinates,
                 consoleXform?.LocalRotation,
-                docks
-            ));
+                docks));
     }
 
     public override void Update(float frameTime)
@@ -351,7 +351,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             if (comp.Console == null)
                 continue;
 
-            if (!_blocker.CanInteract(uid, comp.Console))
+            if (!_blocker.CanInteract(uid, comp.Console.Owner))
             {
                 toRemove.Add((uid, comp));
             }
@@ -395,21 +395,21 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         ClearPilots(component);
     }
 
-    public void AddPilot(EntityUid uid, EntityUid entity, ShuttleConsoleComponent component)
+    public void AddPilot(EntityUid entity, ShuttleConsoleComponent component)
     {
-        if (!EntityManager.TryGetComponent(entity, out PilotComponent? pilotComponent)
-        || component.SubscribedPilots.Contains(entity))
+        if (!EntityManager.TryGetComponent(entity, out PilotComponent? pilotComponent) ||
+            component.SubscribedPilots.Contains(pilotComponent))
         {
             return;
         }
 
-        _eyeSystem.SetZoom(entity, component.Zoom, ignoreLimits: true);
+        _eyeSystem.SetZoom(entity, component.Zoom, ignoreLimits:true);
 
-        component.SubscribedPilots.Add(entity);
+        component.SubscribedPilots.Add(pilotComponent);
 
         _alertsSystem.ShowAlert(entity, AlertType.PilotingShuttle);
 
-        pilotComponent.Console = uid;
+        pilotComponent.Console = component;
         ActionBlockerSystem.UpdateCanMove(entity);
         pilotComponent.Position = EntityManager.GetComponent<TransformComponent>(entity).Coordinates;
         Dirty(pilotComponent);
@@ -419,14 +419,14 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     {
         var console = pilotComponent.Console;
 
-        if (!TryComp<ShuttleConsoleComponent>(console, out var helm))
+        if (console is not ShuttleConsoleComponent helmsman)
             return;
 
         pilotComponent.Console = null;
         pilotComponent.Position = null;
         _eyeSystem.ResetZoom(pilotUid);
 
-        if (!helm.SubscribedPilots.Remove(pilotUid))
+        if (!helmsman.SubscribedPilots.Remove(pilotComponent))
             return;
 
         _alertsSystem.ClearAlert(pilotUid, AlertType.PilotingShuttle);
@@ -447,11 +447,9 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     public void ClearPilots(ShuttleConsoleComponent component)
     {
-        var query = GetEntityQuery<PilotComponent>();
         while (component.SubscribedPilots.TryGetValue(0, out var pilot))
         {
-            if (query.TryGetComponent(pilot, out var pilotComponent))
-                RemovePilot(pilot, pilotComponent);
+            RemovePilot(pilot.Owner, pilot);
         }
     }
 }

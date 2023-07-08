@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Numerics;
 using Content.Server.Administration.Commands;
 using Content.Server.Administration.Components;
 using Content.Server.Atmos;

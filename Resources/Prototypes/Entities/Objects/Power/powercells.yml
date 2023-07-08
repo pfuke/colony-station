@@ -14,12 +14,12 @@
     sprite: Objects/Power/power_cells.rsi
   - type: SolutionContainerManager
     solutions:
-      battery:
+      powerCell:
         maxVol: 5
   - type: InjectableSolution
-    solution: battery
+    solution: powerCell
   - type: DrawableSolution
-    solution: battery
+    solution: powerCell
   - type: Extractable
     juiceSolution:
       reagents:
@@ -30,7 +30,6 @@
       - DroneUsable
   - type: Appearance
   - type: PowerCellVisuals
-  - type: Riggable
 
 - type: entity
   name: potato battery

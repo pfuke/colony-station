@@ -11,8 +11,9 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private CargoBountyMenu? _menu;
 
-    public CargoBountyConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    public CargoBountyConsoleBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
     {
+
     }
 
     protected override void Open()

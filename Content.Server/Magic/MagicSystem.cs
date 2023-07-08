@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
@@ -214,7 +213,7 @@ public sealed class MagicSystem : EntitySystem
             case TargetInFront:
             {
                 // This is shit but you get the idea.
-                var directionPos = casterXform.Coordinates.Offset(casterXform.LocalRotation.ToWorldVec().Normalized());
+                var directionPos = casterXform.Coordinates.Offset(casterXform.LocalRotation.ToWorldVec().Normalized);
 
                 if (!_mapManager.TryGetGrid(casterXform.GridUid, out var mapGrid))
                     return new List<EntityCoordinates>();

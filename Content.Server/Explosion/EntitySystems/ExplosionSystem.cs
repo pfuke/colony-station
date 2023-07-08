@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Chat.Managers;
@@ -345,10 +344,10 @@ public sealed partial class ExplosionSystem : EntitySystem
             if (delta.EqualsApprox(Vector2.Zero))
                 delta = new(0.01f, 0);
 
-            var distance = delta.Length();
+            var distance = delta.Length;
             var effect = 5 * MathF.Pow(totalIntensity, 0.5f) * (1 - distance / range);
             if (effect > 0.01f)
-                _recoilSystem.KickCamera(uid, -delta.Normalized() * effect);
+                _recoilSystem.KickCamera(uid, -delta.Normalized * effect);
         }
     }
 

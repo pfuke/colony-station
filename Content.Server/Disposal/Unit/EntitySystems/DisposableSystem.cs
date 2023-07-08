@@ -4,7 +4,6 @@ using Content.Server.Disposal.Tube;
 using Content.Server.Disposal.Tube.Components;
 using Content.Server.Disposal.Unit.Components;
 using Content.Shared.Body.Components;
-using Content.Shared.Disposal.Components;
 using Content.Shared.Item;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
@@ -14,7 +13,8 @@ using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Disposal.Unit.EntitySystems
 {
-    public sealed class DisposableSystem : EntitySystem
+    [UsedImplicitly]
+    internal sealed class DisposableSystem : EntitySystem
     {
         [Dependency] private readonly IMapManager _mapManager = default!;
         [Dependency] private readonly DisposalUnitSystem _disposalUnitSystem = default!;

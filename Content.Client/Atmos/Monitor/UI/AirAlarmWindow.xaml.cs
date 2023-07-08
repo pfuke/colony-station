@@ -44,7 +44,7 @@ public sealed partial class AirAlarmWindow : FancyWindow
 
     private OptionButton _modes => CModeButton;
 
-    public AirAlarmWindow(BoundUserInterface owner)
+    public AirAlarmWindow(ClientUserInterfaceComponent component)
     {
         RobustXamlLoader.Load(this);
 
@@ -88,7 +88,7 @@ public sealed partial class AirAlarmWindow : FancyWindow
             ResyncAllRequested!.Invoke();
         };
 
-        EntityView.SetEntity(owner.Owner);
+        EntityView.Sprite = IoCManager.Resolve<IEntityManager>().GetComponent<SpriteComponent>(component.Owner);
     }
 
     public void UpdateState(AirAlarmUIState state)

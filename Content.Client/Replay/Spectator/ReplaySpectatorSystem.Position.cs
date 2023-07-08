@@ -134,7 +134,9 @@ public sealed partial class ReplaySpectatorSystem
             return true;
         }
 
-        var uid = EntityQuery<MapGridComponent>().MaxBy(x => x.LocalAABB.Size.LengthSquared())?.Owner;
+        var uid = EntityQuery<MapGridComponent>()
+            .OrderByDescending(x => x.LocalAABB.Size.LengthSquared)
+            .FirstOrDefault()?.Owner;
         coords = new EntityCoordinates(uid ?? default, default);
         return uid != null;
     }

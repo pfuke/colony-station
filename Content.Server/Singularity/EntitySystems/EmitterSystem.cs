@@ -1,4 +1,3 @@
-using System.Numerics;
 using System.Threading;
 using Content.Server.Administration.Logs;
 using Content.Server.Construction;
@@ -293,7 +292,7 @@ namespace Content.Server.Singularity.EntitySystems
             var proj = EnsureComp<ProjectileComponent>(ent);
             _projectile.SetShooter(proj, uid);
 
-            var targetPos = new EntityCoordinates(uid, new Vector2(0, -1));
+            var targetPos = new EntityCoordinates(uid, (0, -1));
 
             _gun.Shoot(uid, gunComponent, ent, xform.Coordinates, targetPos, out _);
         }

@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Client.Actions;
 using Content.Client.Decals.Overlays;
 using Content.Shared.Actions;

@@ -57,9 +57,7 @@ namespace Content.Server.AirlockPainter
             if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
                 return;
             DirtyUI(uid, component);
-
-            if (_userInterfaceSystem.TryGetUi(uid, AirlockPainterUiKey.Key, out var bui))
-                _userInterfaceSystem.OpenUi(bui, actor.PlayerSession);
+            component.Owner.GetUIOrNull(AirlockPainterUiKey.Key)?.Open(actor.PlayerSession);
             args.Handled = true;
         }
 

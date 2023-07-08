@@ -5,6 +5,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.CrewManifest;
 using Content.Shared.PDA;
 using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
 
@@ -13,13 +14,14 @@ namespace Content.Client.PDA
     [UsedImplicitly]
     public sealed class PdaBoundUserInterface : CartridgeLoaderBoundUserInterface
     {
+        [Dependency] private readonly IEntityManager? _entityManager = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
 
-        [ViewVariables]
         private PdaMenu? _menu;
 
-        public PdaBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+        public PdaBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
         {
+            IoCManager.InjectDependencies(this);
         }
 
         protected override void Open()
@@ -130,7 +132,7 @@ namespace Content.Client.PDA
 
         private PdaBorderColorComponent? GetBorderColorComponent()
         {
-            return EntMan.GetComponentOrNull<PdaBorderColorComponent>(Owner);
+            return _entityManager?.GetComponentOrNull<PdaBorderColorComponent>(Owner.Owner);
         }
     }
 }

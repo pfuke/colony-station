@@ -1,6 +1,8 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
+using NUnit.Framework;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
@@ -26,13 +28,10 @@ public sealed partial class MindTests
         await DisconnectReconnect(pair);
 
         // Player in control of a new ghost, but with the same mind
-        Assert.Multiple(() =>
-        {
-            Assert.That(GetMind(pair), Is.EqualTo(mind));
-            Assert.That(entMan.Deleted(ghost));
-            Assert.That(entMan.HasComponent<GhostComponent>(mind.OwnedEntity));
-            Assert.That(mind.VisitingEntity, Is.Null);
-        });
+        Assert.That(GetMind(pair) == mind);
+        Assert.That(entMan.Deleted(ghost));
+        Assert.That(entMan.HasComponent<GhostComponent>(mind.OwnedEntity));
+        Assert.Null(mind.VisitingEntity);
 
         await pairTracker.CleanReturnAsync();
     }
@@ -54,7 +53,7 @@ public sealed partial class MindTests
         var player = playerMan.ServerSessions.Single();
         var name = player.Name;
         var user = player.UserId;
-        Assert.That(mind.OwnedEntity, Is.Not.Null);
+        Assert.NotNull(mind.OwnedEntity);
         var entity = mind.OwnedEntity.Value;
 
         // Player is not a ghost
@@ -66,24 +65,18 @@ public sealed partial class MindTests
         // Delete entity
         Assert.That(entMan.EntityExists(entity));
         await pair.Server.WaitPost(() => entMan.DeleteEntity(entity));
-        Assert.Multiple(() =>
-        {
-            Assert.That(entMan.Deleted(entity));
-            Assert.That(mind.OwnedEntity, Is.Null);
-        });
+        Assert.That(entMan.Deleted(entity));
+        Assert.IsNull(mind.OwnedEntity);
 
         // Reconnect
         await Connect(pair, name);
         player = playerMan.ServerSessions.Single();
-        Assert.Multiple(() =>
-        {
-            Assert.That(user, Is.EqualTo(player.UserId));
+        Assert.That(user, Is.EqualTo(player.UserId));
 
-            // Player is now a new ghost entity
-            Assert.That(GetMind(pair), Is.EqualTo(mind));
-            Assert.That(mind.OwnedEntity, Is.Not.EqualTo(entity));
-            Assert.That(entMan.HasComponent<GhostComponent>(mind.OwnedEntity));
-        });
+        // Player is now a new ghost entity
+        Assert.That(GetMind(pair), Is.EqualTo(mind));
+        Assert.That(mind.OwnedEntity, Is.Not.EqualTo(entity));
+        Assert.That(entMan.HasComponent<GhostComponent>(mind.OwnedEntity));
 
         await pairTracker.CleanReturnAsync();
     }
@@ -106,13 +99,10 @@ public sealed partial class MindTests
         await DisconnectReconnect(pair);
 
         // Player now controls their original mob, mind was preserved
-        Assert.Multiple(() =>
-        {
-            Assert.That(mind, Is.EqualTo(GetMind(pair)));
-            Assert.That(mind.CurrentEntity, Is.EqualTo(original));
-            Assert.That(entMan.Deleted(original), Is.False);
-            Assert.That(entMan.Deleted(ghost));
-        });
+        Assert.That(mind, Is.EqualTo(GetMind(pair)));
+        Assert.That(mind.CurrentEntity, Is.EqualTo(original));
+        Assert.That(!entMan.Deleted(original));
+        Assert.That(entMan.Deleted(ghost));
 
         await pairTracker.CleanReturnAsync();
     }
@@ -144,13 +134,11 @@ public sealed partial class MindTests
         await DisconnectReconnect(pair);
 
         // Player is back in control of the visited mob, mind was preserved
-        Assert.Multiple(() =>
-        {
-            Assert.That(GetMind(pair), Is.EqualTo(mind));
-            Assert.That(entMan.Deleted(original), Is.False);
-            Assert.That(entMan.Deleted(visiting), Is.False);
-            Assert.That(mind.CurrentEntity, Is.EqualTo(visiting));
-        });
+        Assert.That(mind == GetMind(pair));
+        Assert.That(!entMan.Deleted(original));
+        Assert.That(!entMan.Deleted(visiting));
+        Assert.That(mind.CurrentEntity == visiting);
+        Assert.That(mind.CurrentEntity == visiting);
 
         await pairTracker.CleanReturnAsync();
     }

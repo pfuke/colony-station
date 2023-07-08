@@ -7,18 +7,20 @@ namespace Content.Client.Research.UI;
 [UsedImplicitly]
 public sealed class ResearchConsoleBoundUserInterface : BoundUserInterface
 {
-    [ViewVariables]
+
     private ResearchConsoleMenu? _consoleMenu;
 
-    public ResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+
+    public ResearchConsoleBoundUserInterface(ClientUserInterfaceComponent owner, Enum uiKey) : base(owner, uiKey)
     {
+
     }
 
     protected override void Open()
     {
         base.Open();
 
-        var owner = Owner;
+        var owner = Owner.Owner;
 
         _consoleMenu = new ResearchConsoleMenu(owner);
 

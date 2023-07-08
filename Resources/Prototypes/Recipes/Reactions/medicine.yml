@@ -154,9 +154,7 @@
 - type: reaction
   id: Ipecac
   reactants:
-    Potassium:
-      amount: 1
-    Nitrogen:
+    Dylovene:
       amount: 1
     Ammonia:
       amount: 1
@@ -211,16 +209,14 @@
     Phalanximine: 3
 
 - type: reaction
-  id: Ambuzol
+  id: Romerol
   reactants:
-    Dylovene:
+    Phalanximine:
       amount: 1
-    Ammonia:
+    Tricordrazine:
       amount: 1
-    Blood:
-      amount: 2
   products:
-    Ambuzol: 4
+    Romerol: 2
 
 - type: reaction
   id: Synaptizine
@@ -377,13 +373,13 @@
   impact: Medium
   minTemp: 370
   reactants:
-    SodiumCarbonate:
+    SodiumCarbonate: 
       amount: 1
     Kelotane:
       amount: 1
     Water:
       amount: 1
-    Sugar:
+    Sugar: 
       amount: 1
   products:
     Sigynate: 4

@@ -43,7 +43,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -77,7 +76,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
         component.Balance += balanceAdded;
         var query = EntityQueryEnumerator<CargoOrderConsoleComponent>();
 
-        while (query.MoveNext(out var oUid, out var _))
+        while (query.MoveNext(out var oUid, out var oComp))
         {
             if (!_uiSystem.IsUiOpen(oUid, CargoConsoleUiKey.Orders))
                 continue;
@@ -86,7 +85,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
             if (station != uid)
                 continue;
 
-            UpdateOrderState(oUid, station);
+            UpdateOrderState(oComp, station);
         }
     }
 }

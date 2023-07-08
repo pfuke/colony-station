@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
@@ -426,54 +425,48 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(null, weaponUid, coordinates), null);
     }
 
-    public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
+    public void AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
         if (!TryComp<TransformComponent>(target, out var targetXform))
-            return false;
+            return;
 
-        return AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(target, weaponUid, targetXform.Coordinates), null);
+        AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(target, weaponUid, targetXform.Coordinates), null);
     }
 
-    public bool AttemptDisarmAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
+    public void AttemptDisarmAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
         if (!TryComp<TransformComponent>(target, out var targetXform))
-            return false;
+            return;
 
-        return AttemptAttack(user, weaponUid, weapon, new DisarmAttackEvent(target, targetXform.Coordinates), null);
+        AttemptAttack(user, weaponUid, weapon, new DisarmAttackEvent(target, targetXform.Coordinates), null);
     }
 
     /// <summary>
     /// Called when a windup is finished and an attack is tried.
     /// </summary>
-    /// <returns>True if attack successful</returns>
-    private bool AttemptAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, AttackEvent attack, ICommonSession? session)
+    private void AttemptAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, AttackEvent attack, ICommonSession? session)
     {
         var curTime = Timing.CurTime;
 
         if (weapon.NextAttack > curTime)
-            return false;
+            return;
 
         if (!CombatMode.IsInCombatMode(user))
-            return false;
+            return;
 
         switch (attack)
         {
             case LightAttackEvent light:
                 if (!Blocker.CanAttack(user, light.Target))
-                    return false;
-
-                // Can't self-attack if you're the weapon
-                if (weaponUid == light.Target)
-                    return false;
-
+                    return;
                 break;
             case DisarmAttackEvent disarm:
                 if (!Blocker.CanAttack(user, disarm.Target))
-                    return false;
+                    return;
                 break;
             default:
                 if (!Blocker.CanAttack(user))
-                    return false;
+                    return;
                 break;
         }
 
@@ -504,7 +497,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 PopupSystem.PopupClient(ev.Message, weaponUid, user);
             }
 
-            return false;
+            return;
         }
 
         // Attack confirmed
@@ -520,7 +513,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     break;
                 case DisarmAttackEvent disarm:
                     if (!DoDisarm(user, disarm, weaponUid, weapon, session))
-                        return false;
+                        return;
 
                     animation = weapon.ClickAnimation;
                     break;
@@ -536,7 +529,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         }
 
         weapon.Attacking = true;
-        return true;
     }
 
     /// <summary>
@@ -682,7 +674,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         var userPos = TransformSystem.GetWorldPosition(userXform);
         var direction = targetMap.Position - userPos;
-        var distance = Math.Min(component.Range, direction.Length());
+        var distance = Math.Min(component.Range, direction.Length);
 
         var damage = GetDamage(meleeUid, user, component) * GetModifier(meleeUid, user, component, false);
         var entities = ev.Entities;
@@ -940,7 +932,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var invMatrix = TransformSystem.GetInvWorldMatrix(userXform);
         var localPos = invMatrix.Transform(coordinates.Position);
 
-        if (localPos.LengthSquared() <= 0f)
+        if (localPos.LengthSquared <= 0f)
             return;
 
         localPos = userXform.LocalRotation.RotateVec(localPos);
@@ -949,8 +941,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         const float bufferLength = 0.2f;
         var visualLength = length - bufferLength;
 
-        if (localPos.Length() > visualLength)
-            localPos = localPos.Normalized() * visualLength;
+        if (localPos.Length > visualLength)
+            localPos = localPos.Normalized * visualLength;
 
         DoLunge(user, angle, localPos, animation);
     }

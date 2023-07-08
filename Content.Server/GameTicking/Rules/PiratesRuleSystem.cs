@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Numerics;
 using Content.Server.Administration.Commands;
 using Content.Server.Cargo.Systems;
 using Content.Server.Chat.Managers;
@@ -161,12 +160,9 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
                 aabb.Union(aabbs[i]);
             }
 
-            // (Not commented?)
-            var a = MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * 2.5f;
-
             var gridId = _map.LoadGrid(GameTicker.DefaultMap, map, new MapLoadOptions
             {
-                Offset = aabb.Center + new Vector2(a, a),
+                Offset = aabb.Center + MathF.Max(aabb.Height / 2f, aabb.Width / 2f) * 2.5f
             });
 
             if (!gridId.HasValue)

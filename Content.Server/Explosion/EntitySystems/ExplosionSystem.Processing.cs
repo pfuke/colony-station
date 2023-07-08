@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Numerics;
 using Content.Server.Explosion.Components;
 using Content.Server.Mind.Components;
 using Content.Shared.CCVar;
@@ -306,7 +305,7 @@ public sealed partial class ExplosionSystem : EntitySystem
         EntityQuery<TagComponent> tagQuery,
         EntityQuery<ProjectileComponent> projectileQuery)
     {
-        var gridBox = Box2.FromDimensions(tile * DefaultTileSize, new Vector2(DefaultTileSize, DefaultTileSize));
+        var gridBox = Box2.FromDimensions(tile * DefaultTileSize, (DefaultTileSize, DefaultTileSize));
         var worldBox = spaceMatrix.TransformBox(gridBox);
         var list = new List<TransformComponent>();
         var state = (list, processed, invSpaceMatrix, lookup.Owner, xformQuery, gridBox);
