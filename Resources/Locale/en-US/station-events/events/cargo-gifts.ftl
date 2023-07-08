@@ -1,4 +1,4 @@
-cargo-gifts-event-announcement = Congratulations! { $sender } has graciously sent { $description } to the { $dest } of this domain. It will arrive in the next caravan from the Capital City.
+cargo-gifts-event-announcement = Congratulations! { $sender } has graciously sent { $description } to the { $dest } of this domain. The gifts will be in the next caravan from the Capital City.
 cargo-gift-default-description = A bundle of gifts
 cargo-gift-default-sender = The Imperial Court
 cargo-gift-default-dest = Cargo Dept.

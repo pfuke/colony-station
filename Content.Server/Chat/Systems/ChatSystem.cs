@@ -245,7 +245,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="sender">The sender (Communications Console in Communications Console Announcement)</param>
     /// <param name="playSound">Play the announcement sound</param>
     /// <param name="colorOverride">Optional color for the announcement message</param>
-    public void DispatchGlobalAnnouncement(string message, string sender = "Central Command",
+    public void DispatchGlobalAnnouncement(string message, string sender = "Imperial Court",
         bool playSound = true, SoundSpecifier? announcementSound = null, Color? colorOverride = null)
     {
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
@@ -265,7 +265,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="sender">The sender (Communications Console in Communications Console Announcement)</param>
     /// <param name="playDefaultSound">Play the announcement sound</param>
     /// <param name="colorOverride">Optional color for the announcement message</param>
-    public void DispatchStationAnnouncement(EntityUid source, string message, string sender = "Central Command",
+    public void DispatchStationAnnouncement(EntityUid source, string message, string sender = "Imperial Court",
         bool playDefaultSound = true, SoundSpecifier? announcementSound = null, Color? colorOverride = null)
     {
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
