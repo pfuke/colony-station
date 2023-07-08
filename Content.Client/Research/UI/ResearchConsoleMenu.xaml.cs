@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -139,7 +140,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
             // i'm building the small-ass control here to spare me some mild annoyance in making a new file
             var texture = new TextureRect
             {
-                TextureScale = ( 2, 2 ),
+                TextureScale = new Vector2( 2, 2 ),
                 VerticalAlignment = VAlignment.Center
             };
             var label = new RichTextLabel();

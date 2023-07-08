@@ -15,24 +15,21 @@
   - Security
   - Brig
   - Maintenance
-  - Command
   - Service
   - External
 
 - type: startingGear
   id: SecurityOfficerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitLawyerBlue
+    jumpsuit: ClothingUniformJumpsuitSec
     back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesSwat
-    eyes: ClothingEyesGlassesSunglasses
-    head: ClothingHeadHelmetHelmet
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterArmorBulletproof
-    mask: ClothingMaskGasSecurity
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetBasic
+    outerClothing: ClothingOuterArmorBasic
     id: SecurityPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-  innerclothingskirt: ClothingUniformJumpskirtLawyerBlue
+  innerclothingskirt: ClothingUniformJumpskirtSec
   satchel: ClothingBackpackSatchelSecurityFilled
   duffelbag: ClothingBackpackDuffelSecurityFilled

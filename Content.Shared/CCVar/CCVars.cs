@@ -273,6 +273,24 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GameTableBonk =
             CVarDef.Create("game.table_bonk", false, CVar.REPLICATED);
 
+        /// <summary>
+        /// Whether or not status icons are rendered for everyone.
+        /// </summary>
+        public static readonly CVarDef<bool> GlobalStatusIconsEnabled =
+            CVarDef.Create("game.global_status_icons_enabled", true, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether or not status icons are rendered on this specific client.
+        /// </summary>
+        public static readonly CVarDef<bool> LocalStatusIconsEnabled =
+            CVarDef.Create("game.local_status_icons_enabled", true, CVar.CLIENTONLY);
+
+        /// <summary>
+        /// Whether or not coordinates on the Debug overlay should only be available to admins.
+        /// </summary>
+        public static readonly CVarDef<bool> DebugCoordinatesAdminOnly =
+            CVarDef.Create("game.debug_coordinates_admin_only", true, CVar.SERVER | CVar.REPLICATED);
+
 #if EXCEPTION_TOLERANCE
         /// <summary>
         ///     Amount of times round start must fail before the server is shut down.
@@ -281,6 +299,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> RoundStartFailShutdownCount =
             CVarDef.Create("game.round_start_fail_shutdown_count", 5, CVar.SERVERONLY | CVar.SERVER);
 #endif
+
+        /// <summary>
+        /// Delay between station alert level changes.
+        /// </summary>
+        public static readonly CVarDef<int> GameAlertLevelChangeDelay =
+            CVarDef.Create("game.alert_level_change_delay", 30, CVar.SERVERONLY);
 
         /*
          * Discord
@@ -423,6 +447,12 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool>
             ConsoleLoginLocal = CVarDef.Create("console.loginlocal", true, CVar.ARCHIVE | CVar.SERVERONLY);
+
+        /// <summary>
+        /// Automatically log in the given user as host, equivalent to the <c>promotehost</c> command.
+        /// </summary>
+        public static readonly CVarDef<string> ConsoleLoginHostUser =
+            CVarDef.Create("console.login_host_user", "", CVar.ARCHIVE | CVar.SERVERONLY);
 
 
         /*
@@ -789,7 +819,7 @@ namespace Content.Shared.CCVar
         ///     Whether gas differences will move entities.
         /// </summary>
         public static readonly CVarDef<bool> SpaceWind =
-            CVarDef.Create("atmos.space_wind", false, CVar.SERVERONLY);
+            CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
@@ -1081,7 +1111,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals shuttle is enabled.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsShuttles =
-            CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
 
         /// <summary>
         /// The map to use for the arrivals station.
@@ -1105,7 +1135,7 @@ namespace Content.Shared.CCVar
         /// Whether to automatically spawn escape shuttles.
         /// </summary>
         public static readonly CVarDef<bool> GridFill =
-            CVarDef.Create("shuttle.grid_fill", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.grid_fill", true, CVar.SERVERONLY);
 
         /*
          * Emergency
@@ -1145,7 +1175,7 @@ namespace Content.Shared.CCVar
         /// Whether the emergency shuttle is enabled or should the round just end.
         /// </summary>
         public static readonly CVarDef<bool> EmergencyShuttleEnabled =
-            CVarDef.Create("shuttle.emergency", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     The percentage of time passed from the initial call to when the shuttle can no longer be recalled.
@@ -1158,7 +1188,7 @@ namespace Content.Shared.CCVar
         ///     Time in minutes after round start to auto-call the shuttle. Set to zero to disable.
         /// </summary>
         public static readonly CVarDef<int> EmergencyShuttleAutoCallTime =
-            CVarDef.Create("shuttle.auto_call_time", 0, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.auto_call_time", 90, CVar.SERVERONLY);
 
         /// <summary>
         ///     Time in minutes after the round was extended (by recalling the shuttle) to call
