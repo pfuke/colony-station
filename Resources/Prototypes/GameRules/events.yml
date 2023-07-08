@@ -15,7 +15,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 5
+    weight: 0
     startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule

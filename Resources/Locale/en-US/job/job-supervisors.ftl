@@ -1,7 +1,7 @@
 ﻿job-supervisors-centcom = CentCom official
 job-supervisors-captain = the Ruler
-job-supervisors-hop = the Prime Minister
-job-supervisors-hop-qm = the Steward and Prime Minister
+job-supervisors-hop = the Chancellor
+job-supervisors-hop-qm = the Treasurer and Chancellor
 job-supervisors-hos = the Marshal
 job-supervisors-ce = the Chief Architect
 job-supervisors-cmo = the Chief Medicus

@@ -260,7 +260,6 @@
       - id: FoodTinMRE
       - id: DrinkMREFlask
       - id: Gauze
-        amount: 10
       - id: Katana
       - id: Musket
       - id: MagazineBoxAntiMateriel
