@@ -9,6 +9,8 @@
       - id: Matchbox
       - id: FoodTinMRE
       - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -21,7 +23,10 @@
       - id: Matchbox
       - id: FoodTinMRE
       - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       - id: RubberStampClown
+      - id: CrayonRainbow
 
 - type: entity
   noSpawn: true
@@ -30,10 +35,14 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
+      - id: Bola
+      - id: Machete
 
 - type: entity
   noSpawn: true
@@ -42,10 +51,8 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: BoxSurvivalBrigmedic
+      - id: Flash
 
 - type: entity
   noSpawn: true
@@ -54,10 +61,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -66,11 +75,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
-      - id: Flash
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       #- name: StationCharter
       #- name: TelescopicBaton
 - type: entity
@@ -80,10 +90,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       #- id: TelescopicBaton
 
 - type: entity
@@ -93,10 +105,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       - id: Bible
       #- id: TelescopicBaton
 
@@ -107,10 +121,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       #- id: TelescopicBaton
 
 - type: entity
@@ -120,10 +136,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       #- id: TelescopicBaton
 
 - type: entity
@@ -133,10 +151,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       #- id: TelescopicBaton
 
 - type: entity
@@ -146,10 +166,14 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
+      - id: Bola
+      - id: Machete
 
 - type: entity
   noSpawn: true
@@ -158,10 +182,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -170,10 +196,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       - id: Bible
 
 - type: entity
@@ -183,10 +211,12 @@
   components:
     - type: StorageFill
       contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -195,10 +225,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       - id: RubberStampMime
 
 - type: entity
@@ -208,10 +240,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -220,10 +254,12 @@
   components:
   - type: StorageFill
     contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
 
 - type: entity
   noSpawn: true
@@ -236,6 +272,8 @@
         - id: Matchbox
         - id: FoodTinMRE
         - id: DrinkMREFlask
+        - id: MaterialCloth1
+          amount: 10
         - id: AcousticGuitarInstrument
         - id: SaxophoneInstrument
 
@@ -250,6 +288,8 @@
         - id: Matchbox
         - id: FoodTinMRE
         - id: DrinkMREFlask
+        - id: MaterialCloth1
+          amount: 10
         - id: BookRandom
 
 - type: entity
@@ -259,12 +299,14 @@
   components:
     - type: StorageFill
       contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
-      - id: BoxForensicPad
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
       - id: HandLabeler
+      - id: BoxForensicPad
 
 - type: entity
   noSpawn: true
@@ -273,7 +315,9 @@
   components:
     - type: StorageFill
       contents:
-        - id: Torch
-        - id: Matchbox
-        - id: FoodTinMRE
-        - id: DrinkMREFlask
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
