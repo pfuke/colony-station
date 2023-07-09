@@ -25,7 +25,7 @@
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesSwat
     eyes: ClothingEyesGlassesSunglasses
-    head: ClothingHeadHelmetHelmet
+    head: ClothingHeadHelmetBasic
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorBulletproof
     mask: ClothingMaskGasSecurity

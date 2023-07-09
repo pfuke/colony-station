@@ -22,7 +22,7 @@
     back: ClothingBackpackSecurityFilled
     shoes: ClothingShoesBootsJack
     head: ClothingHeadHatBeretWarden
-    outerClothing: ClothingOuterArmorBulletproof
+    outerClothing: ClothingOuterArmorBasic
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     mask: ClothingMaskGasSecurity
