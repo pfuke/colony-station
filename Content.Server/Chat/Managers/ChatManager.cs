@@ -196,6 +196,7 @@ namespace Content.Server.Chat.Managers
             {
                 var prefs = _preferencesManager.GetPreferences(player.UserId);
                 colorOverride = prefs.AdminOOCColor;
+                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#ff0000"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             }
             if (player.ConnectedClient.UserData.PatronTier is { } patron &&
                      PatronOocColors.TryGetValue(patron, out var patronColor))

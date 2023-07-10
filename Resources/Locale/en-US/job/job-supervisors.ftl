@@ -1,11 +1,11 @@
-﻿job-supervisors-centcom = Imperial official
+﻿job-supervisors-centcom = CentCom official
 job-supervisors-captain = the Ruler
 job-supervisors-hop = the Chancellor
+job-supervisors-hop-qm = the Treasurer and Chancellor
 job-supervisors-hos = the Marshal
 job-supervisors-ce = the Chief Architect
 job-supervisors-cmo = the Chief Medicus
-job-supervisors-rd = the Archpriest
-job-supervisors-qm = the Treasurer
+job-supervisors-rd = the Patriarch
 job-supervisors-service = the nobles and palace officials
 job-supervisors-engineering = masons and the Chief Architect
 job-supervisors-medicine = the Chief Medicus
