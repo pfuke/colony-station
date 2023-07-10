@@ -6,7 +6,7 @@
   - type: StorageFill
     contents:
       - id: ClothingOuterVest
-      - id: WeaponShotgunDoubleBarreledRubber
+      - id: WeaponShotgunBlunderbuss
       - id: DrinkShaker
       - id: ClothingEyesGlassesBeer
       - id: DrinkBottleBeer
@@ -70,8 +70,6 @@
       - id: SoapNT
         amount: 2
       - id: FlashlightLantern
-        amount: 2
-      - id: Plunger
         amount: 2
 
 - type: entity
