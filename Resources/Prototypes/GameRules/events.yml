@@ -4,7 +4,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 0
     startDelay: 30
     duration: 35
   - type: AnomalySpawnRule
@@ -15,7 +15,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 5
+    weight: 0
     startDelay: 30
     duration: 35
   - type: BluespaceArtifactRule
@@ -167,7 +167,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 10
+    weight: 0
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
@@ -303,8 +303,8 @@
   noSpawn: true
   components:
   - type: StationEvent
-    earliestStart: 50
-    weight: 2.5
+    earliestStart: 120
+    weight: 1
     duration: 1
   - type: ZombieRule
 
