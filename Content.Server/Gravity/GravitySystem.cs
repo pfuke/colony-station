@@ -22,6 +22,9 @@ namespace Content.Server.Gravity
             if (!Resolve(uid, ref gravity))
                 return;
 
+            if (gravity.Inherent)
+                return;
+
             var enabled = false;
 
             foreach (var (comp, xform) in EntityQuery<GravityGeneratorComponent, TransformComponent>(true))
@@ -57,7 +60,7 @@ namespace Content.Server.Gravity
             if (!Resolve(uid, ref gravity))
                 return;
 
-            if (gravity.Enabled)
+            if (gravity.Enabled || gravity.Inherent)
                 return;
 
             gravity.Enabled = true;

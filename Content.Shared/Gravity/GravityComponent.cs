@@ -27,5 +27,9 @@ namespace Content.Shared.Gravity
 
         [DataField("enabled")]
         public bool Enabled;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("inherent")]
+        public bool Inherent;
     }
 }
