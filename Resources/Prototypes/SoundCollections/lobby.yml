@@ -3,5 +3,6 @@
   files:
     - /Audio/Lobby/into_the_void.ogg
     - /Audio/Lobby/control_the_stars.ogg
-    # - /Audio/Lobby/cmdr_blood.ogg
+    - /Audio/Lobby/cmdr_blood.ogg
     - /Audio/Lobby/coalesce.ogg
+    - /Audio/Lobby/battle_zone.ogg

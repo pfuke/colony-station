@@ -167,7 +167,7 @@
   noSpawn: true
   components:
   - type: StationEvent
-    weight: 0
+    weight: 10
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
