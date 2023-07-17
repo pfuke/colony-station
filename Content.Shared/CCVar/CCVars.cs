@@ -1124,7 +1124,7 @@ namespace Content.Shared.CCVar
         /// added by earth 3000 fork, should be somewhere else
         /// </summary>
         public static readonly CVarDef<string> OrbitalStationMap =
-            CVarDef.Create("shuttle.arrivals_map", "/Maps/derelict.yml", CVar.SERVERONLY);
+            CVarDef.Create("shuttle.orbital_map", "/Maps/derelict.yml", CVar.SERVERONLY);
 
         /// <summary>
         /// Cooldown between arrivals departures. This should be longer than the FTL time or it will double cycle.
