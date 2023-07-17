@@ -85,7 +85,7 @@ public sealed partial class ShuttleSystem
             TryComp<PhysicsComponent>(ev.GridId, out var body) &&
             body.Mass > FTLDestinationMass)
         {
-            AddFTLDestination(ev.GridId, true);
+            // AddFTLDestination(ev.GridId, true);
         }
     }
 
