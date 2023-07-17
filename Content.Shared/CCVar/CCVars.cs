@@ -1120,6 +1120,13 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.arrivals_map", "/Maps/Misc/terminal.yml", CVar.SERVERONLY);
 
         /// <summary>
+        /// The map to use for the orbital station.
+        /// added by earth 3000 fork, should be somewhere else
+        /// </summary>
+        public static readonly CVarDef<string> OrbitalStationMap =
+            CVarDef.Create("shuttle.arrivals_map", "/Maps/derelict.yml", CVar.SERVERONLY);
+
+        /// <summary>
         /// Cooldown between arrivals departures. This should be longer than the FTL time or it will double cycle.
         /// </summary>
         public static readonly CVarDef<float> ArrivalsCooldown =

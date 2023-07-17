@@ -308,11 +308,41 @@ public sealed class ArrivalsSystem : EntitySystem
 
     private void OnRoundStarting(RoundStartingEvent ev)
     {
+        //earth 3000 fork - need to move this to its own file with a new event listener
+        SetupOrbitalStation();
+
         // Setup arrivals station
         if (!Enabled)
             return;
 
         SetupArrivalsStation();
+    }
+
+    //earth 3000 fork - need to move this to its own file
+    private void SetupOrbitalStation()
+    {
+        var mapId = _mapManager.CreateMap();
+
+        if (!_loader.TryLoad(mapId, _cfgManager.GetCVar(CCVars.OrbitalStationMap), out var uids))
+        {
+            return;
+        }
+
+        foreach (var id in uids)
+        {
+            // EnsureComp<ArrivalsSourceComponent>(id);
+            // EnsureComp<ProtectedGridComponent>(id);
+            // EnsureComp<PreventPilotComponent>(id);
+            EnsureComp<BecomesStationComponent>(id);
+        }
+
+        // Handle roundstart stations.
+        // var query = AllEntityQuery<StationArrivalsComponent>();
+
+        // while (query.MoveNext(out var uid, out var comp))
+        // {
+        //     SetupShuttle(uid, comp);
+        // }
     }
 
     private void SetupArrivalsStation()

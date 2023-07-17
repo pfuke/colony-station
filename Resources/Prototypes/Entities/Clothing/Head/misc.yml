@@ -141,7 +141,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatFancyCrown
   name: fancy crown
-  description: It smells like dead rat. Lets you speak like one!
+  description: The regalia of a feudal ruler, signifying their claim to power.
   components:
   - type: Sprite
     sprite: Clothing/Head/Misc/fancycrown.rsi
@@ -150,7 +150,7 @@
   - type: MobPrice
     price: 3000
   - type: AddAccentClothing
-    accent: MobsterAccent
+    accent: ArchaicAccent
 
 - type: entity
   parent: ClothingHeadBase
