@@ -655,6 +655,7 @@ public sealed partial class ShuttleSystem
         var transform = _physics.GetPhysicsTransform(uid, xform, xformQuery);
         var aabbs = new List<Box2>(manager.Fixtures.Count);
         var mobQuery = GetEntityQuery<BodyComponent>();
+        var blacklistQuery = GetEntityQuery<SmimshBlacklistComponent>();
         var immune = new HashSet<EntityUid>();
 
         foreach (var fixture in manager.Fixtures.Values)
@@ -670,6 +671,11 @@ public sealed partial class ShuttleSystem
             foreach (var ent in _lookup.GetEntitiesIntersecting(xform.MapUid.Value, aabb, LookupFlags.Uncontained))
             {
                 if (ent == uid || immune.Contains(ent))
+                {
+                    continue;
+                }
+
+                if (blacklistQuery.HasComponent(ent))
                 {
                     continue;
                 }
