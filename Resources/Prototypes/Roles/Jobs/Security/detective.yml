@@ -3,10 +3,10 @@
   name: job-name-detective
   description: job-description-detective
   playTimeTracker: JobDetective
-  requirements:
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 7200 #2 hrs
+  # requirements:
+  # - !type:DepartmentTimeRequirement
+  #   department: Security
+  #   time: 7200 #2 hrs
   startingGear: DetectiveGear
   icon: "Detective"
   supervisors: job-supervisors-hos

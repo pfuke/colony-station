@@ -1,4 +1,4 @@
-﻿job-supervisors-centcom = CentCom official
+﻿job-supervisors-centcom = the faraway Imperial Court
 job-supervisors-captain = the Ruler
 job-supervisors-hop = the Chancellor
 job-supervisors-hop-qm = the Treasurer and Chancellor
