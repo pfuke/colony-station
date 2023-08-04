@@ -133,8 +133,9 @@
   - type: InputMover
   - type: MobMover
   - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
     factions:
     - SimpleHostile
   - type: Bloodstream
@@ -164,6 +165,22 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Chicken
+  - type: Reproductive
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Chicken
+    offspring:
+    - id: FoodEggChickenFertilized
+      maxAmount: 3
+  - type: ReproductivePartner
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -191,9 +208,24 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Puller
     needsHands: true
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
+
+- type: entity
+  id: FoodEggChickenFertilized
+  parent: FoodEgg
+  suffix: Fertilized, Chicken
+  components:
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobChicken
+    intervalSeconds: 20
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn #delete the egg after the chicken spawns
+    lifetime: 21
 
 - type: entity
   name: mallard duck #Quack
@@ -218,6 +250,22 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+      - Duck
+  - type: Reproductive
+    breedChance: 0.05
+    birthPopup: reproductive-laid-egg-popup
+    makeOffspringInfant: false
+    partnerWhitelist:
+      tags:
+      - Duck
+    offspring:
+    - id: FoodEggDuckFertilized
+      maxAmount: 3
+  - type: ReproductivePartner
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -243,7 +291,7 @@
     accent: duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
 
@@ -280,6 +328,23 @@
         Base: duck-2
       Dead:
         Base: dead-2
+
+- type: entity
+  id: FoodEggDuckFertilized
+  parent: FoodEgg
+  suffix: Fertilized, Duck
+  components:
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - MobDuckMallard
+      - MobDuckWhite
+      - MobDuckBrown
+      intervalSeconds: 20
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+    - type: TimedDespawn #delete the egg after the chicken spawns
+      lifetime: 21
 
 - type: entity
   name: butterfly
@@ -343,6 +408,17 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: cow
       sprite: Mobs/Animals/cow.rsi
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Cow
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Cow
+    offspring:
+    - id: MobCow
+  - type: ReproductivePartner
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -389,13 +465,14 @@
       path: /Audio/Animals/cow_moo.ogg
   - type: Perishable
     molsPerSecondPerUnitMass: 0.0015
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
   - type: Body
     prototype: AnimalRuminant
   - type: HTN
-    rootTask: RuminantCompound
+    rootTask:
+      task: RuminantCompound
   - type: GuideHelp
     guides:
     - Chef
@@ -464,6 +541,18 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Goat
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Goat
+    offspring:
+    - id: MobGoat
+  - type: ReproductivePartner
+  - type: Appearance
   - type: DamageStateVisuals
     states:
       Alive:
@@ -495,13 +584,14 @@
     interactFailureString: petting-failure-goat
     interactSuccessSound:
       path: /Audio/Animals/goat_bah.ogg
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
   - type: Body
     prototype: AnimalRuminant
   - type: HTN
-    rootTask: RuminantCompound
+    rootTask:
+      task: RuminantCompound
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -546,7 +636,7 @@
   - type: Bloodstream
     bloodMaxVolume: 100
   - type: Puller
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
 
@@ -676,8 +766,9 @@
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
   - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
     factions:
     - SimpleHostile
 
@@ -757,7 +848,7 @@
   - type: MonkeyAccent
   - type: Puller
   - type: CanHostGuardian
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
   - type: GhostRole
@@ -815,11 +906,12 @@
     equippedPrefix: 0
     slots:
     - HEAD
-  - type: Faction
+  - type: NpcFactionMember
     factions:
       - Mouse
   - type: HTN
-    rootTask: MouseCompound
+    rootTask:
+      task: MouseCompound
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -1183,7 +1275,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSound:
       path: /Audio/Animals/penguin_squawk.ogg
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive
 
@@ -1199,8 +1291,9 @@
   - type: InputMover
   - type: MobMover
   - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
     factions:
     - Syndicate
   - type: Sprite
@@ -1260,6 +1353,97 @@
         damage: 50
       behaviors:
       - !type:ExplodeBehavior
+      
+- type: entity
+  name: monkey
+  id: MobMonkeySyndicateAgent
+  parent: SimpleMobBase # doesn't parent off monkeys to be able to not have the clumsy component
+  description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
+  suffix: syndicate
+  components:
+  - type: CombatMode
+  - type: NameIdentifier
+    group: Monkey
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-primate
+  - type: Inventory
+    templateId: monkey
+    speciesId: monkey
+  - type: InventorySlots
+  - type: Cuffable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: monkey
+      sprite: Mobs/Animals/monkey.rsi
+    - map: [ "jumpsuit" ]
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: Hands
+  - type: GenericVisualizer
+    visuals:
+      enum.CreamPiedVisuals.Creamed:
+        clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
+          True: {visible: true}
+          False: {visible: false}
+  - type: Speech
+    speechSounds: Monkey
+  - type: Body
+    prototype: Primate
+    requiredLegs: 1 # TODO: More than 1 leg
+  - type: CreamPied
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Monkey_burning
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: MonkeyAccent
+  - type: Puller
+  - type: CanHostGuardian
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-monkey-name
+    description: ghost-role-information-monkey-description
+  - type: GhostTakeoverAvailable
+  - type: IdExaminable
+  - type: Loadout
+    prototype: SyndicateOperativeGearMonkey
+    prototypes: [SyndicateOperativeGearMonkey]
 
   # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
@@ -1378,13 +1562,14 @@
   id: MobGiantSpiderAngry
   suffix: Angry
   components:
-    - type: Faction
+    - type: NpcFactionMember
       factions:
         - Xeno
     - type: InputMover
     - type: MobMover
     - type: HTN
-      rootTask: SimpleHostileCompound
+      rootTask:
+        task: SimpleHostileCompound
     - type: GhostRole
       makeSentient: true
       name: ghost-role-information-giant-spider-name
@@ -1688,8 +1873,9 @@
   - type: InputMover
   - type: MobMover
   - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
     factions:
     - SimpleHostile
   - type: InteractionPopup
@@ -2114,6 +2300,17 @@
   - type: Inventory
     speciesId: pig
     templateId: pet
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Pig
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - Pig
+    offspring:
+    - id: MobPig
+  - type: ReproductivePartner
   - type: InventorySlots
   - type: Strippable
   - type: UserInterface
@@ -2143,6 +2340,6 @@
     accent: pig
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
-  - type: Faction
+  - type: NpcFactionMember
     factions:
     - Passive

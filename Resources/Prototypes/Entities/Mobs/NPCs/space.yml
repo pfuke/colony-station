@@ -6,8 +6,9 @@
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: HTN
-    rootTask: SimpleHostileCompound
-  - type: Faction
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
     factions:
     - SimpleHostile
   - type: Sprite
@@ -36,6 +37,7 @@
       150: Dead
   - type: Stamina
     excess: 150
+  - type: MovementAlwaysTouching
   - type: Bloodstream
     bloodMaxVolume: 300
     bloodReagent: Cryoxadone

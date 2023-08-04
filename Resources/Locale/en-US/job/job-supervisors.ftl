@@ -1,14 +1,15 @@
 ﻿job-supervisors-centcom = the faraway Imperial Court
 job-supervisors-captain = the Ruler
 job-supervisors-hop = the Chancellor
-job-supervisors-hop-qm = the Treasurer and Chancellor
 job-supervisors-hos = the Marshal
 job-supervisors-ce = the Chief Architect
 job-supervisors-cmo = the Chief Medicus
 job-supervisors-rd = the Bishop
+job-supervisors-qm = the Treasurer
 job-supervisors-service = the nobles and palace officials
 job-supervisors-engineering = masons and the Chief Architect
 job-supervisors-medicine = the Chief Medicus
 job-supervisors-security = Knights, the Jailer, the Inquisitor, and the Marshal
-job-supervisors-hire = whoever hires you
+job-supervisors-science = the priests of the Church
+job-supervisors-hire = whoever pays you
 job-supervisors-everyone = absolutely no one

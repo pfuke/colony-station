@@ -55,6 +55,11 @@ namespace Content.Server.Gravity
             RefreshGravity(uid);
         }
 
+        /// <summary>
+        /// Enables gravity. Note that this is a fast-path for GravityGeneratorSystem.
+        /// This means it does nothing if Inherent is set and it might be wiped away with a refresh
+        ///  if you're not supposed to be doing whatever you're doing.
+        /// </summary>
         public void EnableGravity(EntityUid uid, GravityComponent? gravity = null)
         {
             if (!Resolve(uid, ref gravity))

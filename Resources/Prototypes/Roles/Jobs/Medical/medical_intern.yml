@@ -4,7 +4,7 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   startingGear: MedicalInternGear
-  icon: "MedicalIntern"
+  icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
   canBeAntag: false
   access:

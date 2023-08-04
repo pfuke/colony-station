@@ -7,7 +7,7 @@
   #   - !type:OverallPlaytimeRequirement
   #     time: 3600 #1 hr
   startingGear: SecurityCadetGear
-  icon: "SecurityCadet"
+  icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   canBeAntag: false
   access:
@@ -20,7 +20,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNanotrasen
     back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatBeretWarden
     outerClothing: ClothingOuterArmorBasic
     id: SecurityCadetPDA
