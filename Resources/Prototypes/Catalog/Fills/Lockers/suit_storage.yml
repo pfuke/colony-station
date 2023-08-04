@@ -88,7 +88,7 @@
   components:
   - type: StorageFill
     contents:
-        - id: JetpackVoidFilled
+        - id: JetpackMiniFilled
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitAncientEVA
         - id: ClothingHeadHelmetAncient
