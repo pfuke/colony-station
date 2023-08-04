@@ -143,7 +143,8 @@ entities:
           tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAAAAXwAAAAAAAABeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgAAAF8AAAAAAAAAXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4AAABfAAAAAAAAAF4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAAAAXwAAAAAAAABeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgAAAF8AAAAAAAAAXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4AAABfAAAAAAAAAF4AAABeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAAAAXwAAAAAAAABeAAAAXwAAAF4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgAAAF8AAAAAAAAAXgAAAD0AAABfAAAAXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF4AAABfAAAAAAAAAF4AAAA9AAAAPQAAAF8AAABfAAAAXwAAAF8AAABeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeAAAAXwAAAAAAAABeAAAAPQAAAD0AAAA9AAAAPQAAAD0AAAA9AAAAXwAAAF8AAABeAAAAAAAAAAAAAAAAAAAAXgAAAF8AAAAAAAAAXgAAAD0AAAA9AAAAPQAAAD0AAAA9AAAAPQAAADsAAAA7AAAAOwAAAAAAAAAAAAAAAAAAAF4AAABfAAAAAAAAAF4AAAA9AAAAPQAAAD0AAAA9AAAAPQAAAD0AAABfAAAAXwAAAF4AAAAAAAAAAAAAAAAAAABeAAAAXwAAAAAAAABeAAAAPQAAAD0AAABfAAAAXwAAAF8AAABfAAAAXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgAAAF8AAAAAAAAAXgAAAA==
       type: MapGrid
     - type: Broadphase
-    - angularDamping: 0.05
+    - bodyStatus: InAir
+      angularDamping: 0.05
       linearDamping: 0.05
       fixedRotation: False
       bodyType: Dynamic
@@ -1073,7 +1074,8 @@ entities:
           tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
       type: MapGrid
     - type: Broadphase
-    - angularDamping: 0.05
+    - bodyStatus: InAir
+      angularDamping: 0.05
       linearDamping: 0.05
       fixedRotation: False
       bodyType: Dynamic
@@ -1685,6 +1687,11 @@ entities:
     - rot: -1.5707963267948966 rad
       pos: 5.5,-10.5
       parent: 1036
+      type: Transform
+  - uid: 3912
+    components:
+    - pos: 0.5,-30.5
+      parent: 3
       type: Transform
 - proto: BedsheetMedical
   entities:
@@ -15211,11 +15218,11 @@ entities:
     - pos: 8.5,-17.5
       parent: 3
       type: Transform
-- proto: CrateArmorySMG
+- proto: CrateArmoryPistols
   entities:
   - uid: 3056
     components:
-    - pos: -1.5,51.5
+    - pos: -1.5,50.5
       parent: 3
       type: Transform
 - proto: CrateEngineeringCableBulk
@@ -15547,16 +15554,22 @@ entities:
     - pos: -15.5,-1.5
       parent: 3
       type: Transform
+    - remainingFuel: 30
+      type: FuelGenerator
   - uid: 1149
     components:
     - pos: -13.5,-1.5
       parent: 3
       type: Transform
+    - remainingFuel: 30
+      type: FuelGenerator
   - uid: 1276
     components:
     - pos: -14.5,-1.5
       parent: 3
       type: Transform
+    - remainingFuel: 30
+      type: FuelGenerator
   - uid: 1278
     components:
     - pos: -11.5,-1.5
@@ -15572,6 +15585,8 @@ entities:
     - pos: -12.5,-1.5
       parent: 3
       type: Transform
+    - remainingFuel: 30
+      type: FuelGenerator
   - uid: 2828
     components:
     - pos: -0.5,-10.5
@@ -17246,6 +17261,23 @@ entities:
     - pos: 17.5,-17.5
       parent: 3
       type: Transform
+- proto: SheetUranium
+  entities:
+  - uid: 3903
+    components:
+    - pos: -10.514293,-0.640625
+      parent: 3
+      type: Transform
+  - uid: 3907
+    components:
+    - pos: 2.4132504,52.301804
+      parent: 3
+      type: Transform
+  - uid: 3908
+    components:
+    - pos: 2.4913754,51.31743
+      parent: 3
+      type: Transform
 - proto: ShuttersNormal
   entities:
   - uid: 2797
@@ -17467,10 +17499,6 @@ entities:
         - Pressed: Toggle
         2854:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2859
-        - 2854
       type: DeviceLinkSource
   - uid: 2348
     components:
@@ -17483,10 +17511,6 @@ entities:
         - Pressed: Toggle
         2798:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2826
-        - 2798
       type: DeviceLinkSource
   - uid: 2534
     components:
@@ -17499,10 +17523,6 @@ entities:
         - Pressed: Toggle
         2797:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 3045
-        - 2797
       type: DeviceLinkSource
   - uid: 2755
     components:
@@ -17513,9 +17533,6 @@ entities:
     - linkedPorts:
         2861:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2861
       type: DeviceLinkSource
   - uid: 2763
     components:
@@ -17525,9 +17542,6 @@ entities:
     - linkedPorts:
         2860:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2860
       type: DeviceLinkSource
   - uid: 2766
     components:
@@ -17540,10 +17554,6 @@ entities:
         - Pressed: Toggle
         2856:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2839
-        - 2856
       type: DeviceLinkSource
   - uid: 2767
     components:
@@ -17555,10 +17565,6 @@ entities:
         - Pressed: Toggle
         2837:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2853
-        - 2837
       type: DeviceLinkSource
   - uid: 2768
     components:
@@ -17571,10 +17577,6 @@ entities:
         - Pressed: Toggle
         2838:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2836
-        - 2838
       type: DeviceLinkSource
   - uid: 2777
     components:
@@ -17587,10 +17589,6 @@ entities:
         - Pressed: Toggle
         2430:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2431
-        - 2430
       type: DeviceLinkSource
   - uid: 2800
     components:
@@ -17603,10 +17601,6 @@ entities:
         - Pressed: Toggle
         2408:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 2407
-        - 2408
       type: DeviceLinkSource
   - uid: 2901
     components:
@@ -17619,10 +17613,6 @@ entities:
         - Pressed: Toggle
         3054:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 3052
-        - 3054
       type: DeviceLinkSource
   - uid: 3839
     components:
@@ -17635,10 +17625,6 @@ entities:
         - Pressed: Toggle
         3843:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 3837
-        - 3843
       type: DeviceLinkSource
   - uid: 3846
     components:
@@ -17650,10 +17636,6 @@ entities:
         - Pressed: Toggle
         3841:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 3840
-        - 3841
       type: DeviceLinkSource
   - uid: 3891
     components:
@@ -17675,15 +17657,6 @@ entities:
         - Pressed: Toggle
         3046:
         - Pressed: Toggle
-      registeredSinks:
-        Pressed:
-        - 3057
-        - 3051
-        - 3050
-        - 3852
-        - 3048
-        - 3047
-        - 3046
       type: DeviceLinkSource
 - proto: SignDirectionalBridge
   entities:
@@ -19362,6 +19335,20 @@ entities:
   - uid: 2395
     components:
     - pos: 44.5,0.5
+      parent: 3
+      type: Transform
+- proto: SpawnMobCatSpace
+  entities:
+  - uid: 3910
+    components:
+    - pos: 3.5,3.5
+      parent: 3
+      type: Transform
+- proto: SpawnMobDrone
+  entities:
+  - uid: 3911
+    components:
+    - pos: 12.5,-14.5
       parent: 3
       type: Transform
 - proto: SpawnPointERTEngineer
@@ -24990,6 +24977,13 @@ entities:
   - uid: 730
     components:
     - pos: -10.5,27.5
+      parent: 3
+      type: Transform
+- proto: WeaponPulsePistol
+  entities:
+  - uid: 3909
+    components:
+    - pos: 13.55459,35.563225
       parent: 3
       type: Transform
 - proto: WindoorSecureExternalLocked
