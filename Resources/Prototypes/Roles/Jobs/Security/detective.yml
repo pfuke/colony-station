@@ -23,16 +23,14 @@
   id: DetectiveGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLawyerBlue
-    back: ClothingBackpackSecurityFilled
+    back: ClothingBackpackSecurityFilledDetective
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSunglasses
     outerClothing: ClothingOuterVestDetective
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
     gloves: ClothingHandsGlovesCombat
-    pocket1: ForensicPad
-    pocket2: ForensicScanner
     belt: ClothingBeltSecurityFilled
   innerclothingskirt: ClothingUniformJumpskirtDetective
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+  satchel: ClothingBackpackSatchelSecurityFilledDetective
+  duffelbag: ClothingBackpackDuffelSecurityFilledDetective

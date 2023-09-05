@@ -37,3 +37,4 @@ player-leave-message = Player {$name} left.
 latejoin-arrival-announcement = {$character} ({$job}) has entered the realm!
 latejoin-arrival-sender = Castle
 latejoin-arrivals-direction = A shuttle transferring you to your station will arrive shortly.
+latejoin-arrivals-direction-time = A shuttle transferring you to your station will arrive in {$time}.

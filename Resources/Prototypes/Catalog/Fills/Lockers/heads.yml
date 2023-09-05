@@ -7,6 +7,8 @@
     contents:
       - id: ClothingNeckCloakQm
       - id: ClothingHeadsetCargo
+      - id: ClothingUniformJumpsuitQMTurtleneck
+      - id: ClothingUniformJumpskirtQMTurtleneck
       - id: ClothingHandsGlovesColorBrown
       - id: ClothingOuterSuitFire
       - id: ClothingShoesColorBrown
@@ -100,6 +102,8 @@
     contents:
       - id: ClothingOuterHardsuitEngineeringWhite
       - id: ClothingMaskBreath
+      - id: ClothingUniformJumpsuitChiefEngineerTurtle
+      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingNeckCloakCe
@@ -115,6 +119,7 @@
       - id: JetpackVoidFilled
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -128,11 +133,14 @@
       - id: ClothingBeltChiefEngineerFilled
       - id: ClothingHeadHatBeretEngineering
       - id: ClothingHandsGlovesColorYellow
+      - id: ClothingUniformJumpsuitChiefEngineerTurtle
+      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: CigarCase
       - id: DoorRemoteEngineering
       - id: RubberStampCE
       - id: ClothingHeadsetAltEngineering
       - id: BoxEncryptionKeyEngineering
+      - id: AccessConfigurator
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -151,15 +159,11 @@
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
-      - id: DiagnoserMachineCircuitboard
-      - id: VaccinatorMachineCircuitboard
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
-      - id: MaterialBiomass
-        amount: 3
       - id: BoxEncryptionKeyMedical
 
 - type: entity
@@ -178,15 +182,11 @@
       - id: ClothingOuterCoatLabCmo
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
-      - id: DiagnoserMachineCircuitboard
-      - id: VaccinatorMachineCircuitboard
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
       - id: RubberStampCMO
       - id: MedicalTechFabCircuitboard
-      - id: MaterialBiomass
-        amount: 3
       - id: BoxEncryptionKeyMedical
 
 - type: entity
@@ -205,10 +205,11 @@
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingHeadHatBeretRND
+      - id: ClothingHandsGlovesColorPurple
+      - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: ClothingHeadsetAltScience
       - id: BoxEncryptionKeyScience
-      - id: BoxEncryptionKeyRobo
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -224,10 +225,11 @@
       - id: ClothingHeadsetMedicalScience
       - id: DoorRemoteResearch
       - id: ClothingHeadHatBeretRND
+      - id: ClothingHandsGlovesColorPurple
+      - id: ClothingBeltUtilityFilled
       - id: RubberStampRd
       - id: ClothingHeadsetAltScience
       - id: BoxEncryptionKeyScience
-      - id: BoxEncryptionKeyRobo
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -260,6 +262,7 @@
       - id: JetpackSecurityFilled
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
+      - id: BookSecretDocuments
 
 - type: entity
   id: LockerHeadOfSecurityFilled

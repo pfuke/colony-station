@@ -43,6 +43,24 @@
         amount: 10
       - id: Bola
       - id: Machete
+      
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSecurity
+  id: ClothingBackpackSecurityFilledDetective
+  components:
+  - type: StorageFill
+    contents:
+      - id: Torch
+      - id: Matchbox
+      - id: FoodTinMRE
+      - id: DrinkMREFlask
+      - id: MaterialCloth1
+        amount: 10
+      - id: Bola
+      - id: Machete
+      - id: ForensicPad
+      - id: ForensicScanner
 
 - type: entity
   noSpawn: true

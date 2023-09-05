@@ -4,6 +4,6 @@ namespace Content.Server.Shuttles.Components;
 /// This is used for blacklisting entities from being on the arrivals shuttle when it goes FTL.
 /// </summary>
 [RegisterComponent]
-public sealed class SmimshBlacklistComponent : Component
+public sealed partial class SmimshBlacklistComponent : Component
 {
 }

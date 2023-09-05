@@ -129,22 +129,23 @@
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelSyndicateCostumeCentcom
   name: CentCom official costume duffel bag
-  description: "Contains a full CentCom Official uniform set, headset and clipboard included. The headset comes without an encryption key."
+  description: "Contains a full CentCom Official uniform set, headset and clipboard included. Encryption keys and ID access are not included."
+  suffix: DO NOT MAP
   components:
   - type: Tag
     tags: [] # ignore "WhitelistChameleon" tag
   - type: StorageFill
     contents:
-      - id: ClothingHeadHatCaptain
+      - id: ClothingHeadHatCentcom
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingUniformJumpsuitCentcomOfficial
       - id: ClothingShoesBootsJack
-      - id: ClothingHandsGlovesColorGray
-      - id: ClothingHeadsetService
-      - id: ClothingOuterVestKevlar
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHeadsetAltCentComFake
+      - id: ClothingOuterArmorBasic
       - id: Paper
       - id: Pen
-      - id: CentcomPDA
+      - id: CentcomPDAFake
 
 - type: entity
   parent: ClothingBackpackDuffelClown
@@ -161,6 +162,18 @@
       - id: BikeHorn
       - id: ClownPDA
       - id: ClothingHeadsetService
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateCarpSuit
+  name: carp suit duffel bag
+  description: Contains a carp suit and some friends to play with.
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterSuitCarp
+    - id: PlushieCarp
+      amount: 6
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -285,3 +298,20 @@
       - id: WeaponPistolViper
       - id: PinpointerNuclear
       - id: HandheldHealthAnalyzer
+      - id: CombatMedipen
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateMedicalBundle
+  id: ClothingBackpackDuffelSyndicateMedicalBundleFilled
+  name: medical bundle
+  description: "All you need to get your comrades back in the fight."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedkitCombatFilled
+      - id: Defibrillator
+      - id: CombatMedipen
+        amount: 3
+      - id: ClothingHandsGlovesLatex
+      - id: SyringeTranexamicAcid
+      - id: SyringeHyronalin
