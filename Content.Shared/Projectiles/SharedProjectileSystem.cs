@@ -73,6 +73,13 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
         _transform.AttachToGridOrMap(uid, xform);
 
+        // Reset whether the projectile has damaged anything if it successfully was removed
+        if (TryComp<ProjectileComponent>(uid, out var projectile))
+        {
+            projectile.WasFired = false;
+            projectile.DamagedEntity = false;
+        }
+
         // Land it just coz uhhh yeah
         var landEv = new LandEvent(args.User, true);
         RaiseLocalEvent(uid, ref landEv);
@@ -81,6 +88,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     private void OnEmbedThrowDoHit(EntityUid uid, EmbeddableProjectileComponent component, ThrowDoHitEvent args)
     {
+        if (!component.EmbedOnThrow)
+            return;
+
         Embed(uid, args.Target, component);
     }
 
@@ -91,7 +101,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         // Raise a specific event for projectiles.
         if (TryComp<ProjectileComponent>(uid, out var projectile))
         {
-            var ev = new ProjectileEmbedEvent(projectile.Shooter, projectile.Weapon, args.Target);
+            var ev = new ProjectileEmbedEvent(projectile.Shooter!.Value, projectile.Weapon!.Value, args.Target);
             RaiseLocalEvent(uid, ref ev);
         }
     }
