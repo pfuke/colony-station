@@ -51,6 +51,29 @@
       - id: Handcuffs
 
 - type: entity
+  id: ClothingBeltQuiverFilled
+  parent: ClothingBeltQuiver
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+      - id: ArrowRegular
+
+- type: entity
   id: ClothingBeltJanitorFilled
   parent: ClothingBeltJanitor
   suffix: Filled

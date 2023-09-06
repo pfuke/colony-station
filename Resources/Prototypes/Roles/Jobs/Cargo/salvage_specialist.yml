@@ -15,14 +15,19 @@
   - Salvage
   - Maintenance
   - External
+  - Command
 
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    back: ClothingBackpackSalvageFilled
+    jumpsuit: ClothingUniformJumpsuitColorLightBrown
+    back: BowImprovised
     shoes: ClothingShoesBootsSalvage
     id: SalvagePDA
     ears: ClothingHeadsetCargo
-  satchel: ClothingBackpackSatchelSalvageFilled
-  duffelbag: ClothingBackpackDuffelSalvageFilled
+    belt: ClothingBeltQuiverFilled
+    pocket1: DrinkMREFlask
+    pocket2: MaterialCloth10
+  innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
+  satchel: BowImprovised
+  duffelbag: BowImprovised

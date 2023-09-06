@@ -9,6 +9,7 @@
   access:
   - Theatre
   - Maintenance
+  - Command
   special:
   - !type:AddComponentSpecial
     components:
